@@ -294,6 +294,38 @@ def save_multi_loss_curve(
     plt.close()
 
 
+def save_test_metric_plot(
+    labels: list[str],
+    mse_values: list[float],
+    r2_values: list[float],
+    figure_name: str,
+    title: str,
+) -> None:
+    positions = np.arange(len(labels))
+
+    fig, axes = plt.subplots(1, 2, figsize=(13, 4.8))
+
+    axes[0].bar(positions, mse_values, color="tab:blue", alpha=0.85)
+    axes[0].set_title(f"{title} (Test MSE)")
+    axes[0].set_ylabel("Test MSE")
+    axes[0].set_xticks(positions)
+    axes[0].set_xticklabels(labels, rotation=20, ha="right")
+    axes[0].grid(axis="y", alpha=0.3)
+
+    bar_colors = ["tab:green" if value >= 0 else "tab:red" for value in r2_values]
+    axes[1].bar(positions, r2_values, color=bar_colors, alpha=0.85)
+    axes[1].axhline(0, linestyle="--", color="black", linewidth=1)
+    axes[1].set_title(f"{title} (Test R2)")
+    axes[1].set_ylabel("Test R2")
+    axes[1].set_xticks(positions)
+    axes[1].set_xticklabels(labels, rotation=20, ha="right")
+    axes[1].grid(axis="y", alpha=0.3)
+
+    fig.tight_layout()
+    plt.savefig(FIGURE_DIR / f"{sanitize_name(figure_name)}.png")
+    plt.close()
+
+
 def run_case(
     train_df: pd.DataFrame,
     test_df: pd.DataFrame,
@@ -399,6 +431,13 @@ def run_learning_rate_sensitivity(
             curves.append((f"lr={learning_rate}", result["losses"]))
 
     save_multi_loss_curve(curves, "lr_sensitivity_case_1", "Case 1 Learning Rate Sensitivity")
+    save_test_metric_plot(
+        labels=[f"lr={result['learning_rate']}" for result in results],
+        mse_values=[result["test_metrics"]["mse"] for result in results],
+        r2_values=[result["test_metrics"]["r2"] for result in results],
+        figure_name="lr_sensitivity_test_metrics_case_1",
+        title="Case 1 Learning Rate Sensitivity",
+    )
     return results
 
 
@@ -426,6 +465,13 @@ def run_epoch_sensitivity(
             curves.append((f"epochs={epochs}", result["losses"]))
 
     save_multi_loss_curve(curves, "epoch_sensitivity_case_1", "Case 1 Epoch Sensitivity")
+    save_test_metric_plot(
+        labels=[f"ep={result['epochs']}" for result in results],
+        mse_values=[result["test_metrics"]["mse"] for result in results],
+        r2_values=[result["test_metrics"]["r2"] for result in results],
+        figure_name="epoch_sensitivity_test_metrics_case_1",
+        title="Case 1 Epoch Sensitivity",
+    )
     return results
 
 
@@ -459,6 +505,14 @@ def run_standardization_comparison(
         "Case 1 Standardization Comparison",
         show_zoom=False,
     )
+    valid_results = [result for result in results if result["test_metrics"] is not None]
+    save_test_metric_plot(
+        labels=[result["scaling_method"] for result in valid_results],
+        mse_values=[result["test_metrics"]["mse"] for result in valid_results],
+        r2_values=[result["test_metrics"]["r2"] for result in valid_results],
+        figure_name="standardization_test_metrics_case_1",
+        title="Case 1 Standardization Comparison",
+    )
     return results
 
 
@@ -490,6 +544,13 @@ def run_scaling_method_comparison(
         curves,
         "scaling_method_comparison_case_1",
         "Case 1 Scaling Method Comparison",
+    )
+    save_test_metric_plot(
+        labels=[f"{result['scaling_method']}\n{result['epochs']}" for result in results],
+        mse_values=[result["test_metrics"]["mse"] for result in results],
+        r2_values=[result["test_metrics"]["r2"] for result in results],
+        figure_name="scaling_method_test_metrics_case_1",
+        title="Case 1 Scaling Method Comparison",
     )
     return results
 

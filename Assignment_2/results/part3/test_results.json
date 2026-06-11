@@ -1,0 +1,24 @@
+{
+  "fold_accs": [
+    98.46000000000001,
+    98.39,
+    98.61,
+    98.42999999999999,
+    98.52
+  ],
+  "fold_acc_mean": 98.482,
+  "fold_acc_std": 0.0767854152818097,
+  "kfold_hard_voting_acc": 98.65,
+  "kfold_soft_voting_acc": 98.68,
+  "full_train_accs": [
+    98.76,
+    98.76,
+    98.56,
+    98.53,
+    98.54
+  ],
+  "full_train_single_acc": 98.76,
+  "seed_hard_voting_acc": 98.72999999999999,
+  "seed_soft_voting_acc": 98.71,
+  "all_soft_voting_acc": 98.69
+}

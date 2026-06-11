@@ -1,0 +1,8 @@
+{
+  "SGD": 0.1,
+  "SGD-Momentum": 0.1,
+  "Adagrad": 0.1,
+  "RMSprop": 0.001,
+  "Adam": 0.001,
+  "AdamW": 0.001
+}

@@ -1,0 +1,40 @@
+{
+  "config": {
+    "k_splits": 5,
+    "n_full": 5,
+    "epochs": 15,
+    "batch_size": 64,
+    "optimizer": "Adagrad",
+    "lr": 0.1,
+    "scheduler": "OneCycleLR",
+    "seed": 42,
+    "device": "cuda"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "final_val_acc": 98.575,
+      "best_val_acc": 98.60833333333333
+    },
+    {
+      "fold": 1,
+      "final_val_acc": 98.49166666666666,
+      "best_val_acc": 98.53333333333333
+    },
+    {
+      "fold": 2,
+      "final_val_acc": 98.46666666666667,
+      "best_val_acc": 98.50833333333334
+    },
+    {
+      "fold": 3,
+      "final_val_acc": 98.525,
+      "best_val_acc": 98.575
+    },
+    {
+      "fold": 4,
+      "final_val_acc": 98.475,
+      "best_val_acc": 98.55833333333334
+    }
+  ]
+}

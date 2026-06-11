@@ -1,0 +1,75 @@
+{
+  "name": "Adagrad_lr0.1",
+  "config": {
+    "optimizer": "Adagrad",
+    "lr": 0.1,
+    "scheduler": "None",
+    "seed": 0,
+    "epochs": 5,
+    "batch_size": 64,
+    "val_portion": 0.1,
+    "split_seed": 42
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.24009574683286525,
+      "train_acc": 92.8037037037037,
+      "val_loss": 0.10812052406867345,
+      "val_acc": 96.8,
+      "lr": 0.1,
+      "lr_samples": [
+        0.1
+      ],
+      "epoch_time_sec": 2.457913398742676
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.11471651261768959,
+      "train_acc": 96.4888888888889,
+      "val_loss": 0.07967023149132729,
+      "val_acc": 97.48333333333333,
+      "lr": 0.1,
+      "lr_samples": [
+        0.1
+      ],
+      "epoch_time_sec": 2.285163402557373
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.08590836651292112,
+      "train_acc": 97.29444444444445,
+      "val_loss": 0.07052604465186596,
+      "val_acc": 97.6,
+      "lr": 0.1,
+      "lr_samples": [
+        0.1
+      ],
+      "epoch_time_sec": 2.2541637420654297
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.06908278051073904,
+      "train_acc": 97.77592592592593,
+      "val_loss": 0.06364337733884652,
+      "val_acc": 98.0,
+      "lr": 0.1,
+      "lr_samples": [
+        0.1
+      ],
+      "epoch_time_sec": 2.0422799587249756
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.058473875732057624,
+      "train_acc": 98.06851851851852,
+      "val_loss": 0.0640199833214283,
+      "val_acc": 98.03333333333333,
+      "lr": 0.1,
+      "lr_samples": [
+        0.1
+      ],
+      "epoch_time_sec": 2.030207395553589
+    }
+  ]
+}

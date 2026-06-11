@@ -1,0 +1,9 @@
+Sample Index: 11 (True Label: 6)
+  Fold 0 Prediction: 6
+  Fold 1 Prediction: 6
+  Fold 2 Prediction: 6
+  Fold 3 Prediction: 6
+  Fold 4 Prediction: 6
+Ensemble Prediction (soft voting): 6
+Mean probabilities: [0. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
+Figure saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/figures/inference_sample.png

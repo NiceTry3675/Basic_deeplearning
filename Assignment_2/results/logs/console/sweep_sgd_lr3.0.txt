@@ -1,0 +1,13 @@
+=== sgd / none | lr=3.0 | batch=128 | epochs=10 | seed=42 ===
+[Epoch  1] LR: 3.000000 | Train Loss: 0.343562, Train Acc: 91.10% | Val Loss: 0.133753, Val Acc: 95.95% | 2.2s
+[Epoch  2] LR: 3.000000 | Train Loss: 0.140619, Train Acc: 95.78% | Val Loss: 0.110064, Val Acc: 96.58% | 1.7s
+[Epoch  3] LR: 3.000000 | Train Loss: 0.105276, Train Acc: 96.71% | Val Loss: 0.083797, Val Acc: 97.38% | 1.8s
+[Epoch  4] LR: 3.000000 | Train Loss: 0.088394, Train Acc: 97.18% | Val Loss: 0.077426, Val Acc: 97.55% | 1.8s
+[Epoch  5] LR: 3.000000 | Train Loss: 0.077222, Train Acc: 97.51% | Val Loss: 0.083848, Val Acc: 97.57% | 1.7s
+[Epoch  6] LR: 3.000000 | Train Loss: 0.066428, Train Acc: 97.91% | Val Loss: 0.079108, Val Acc: 97.77% | 1.8s
+[Epoch  7] LR: 3.000000 | Train Loss: 0.060506, Train Acc: 98.02% | Val Loss: 0.066381, Val Acc: 98.03% | 1.7s
+[Epoch  8] LR: 3.000000 | Train Loss: 0.057503, Train Acc: 98.15% | Val Loss: 0.071309, Val Acc: 98.12% | 1.7s
+[Epoch  9] LR: 3.000000 | Train Loss: 0.052745, Train Acc: 98.32% | Val Loss: 0.071042, Val Acc: 97.97% | 1.8s
+[Epoch 10] LR: 3.000000 | Train Loss: 0.046665, Train Acc: 98.46% | Val Loss: 0.072355, Val Acc: 97.93% | 1.7s
+## Test Loss: 0.071153, Test Acc: 98.06% (total 17.9s)
+Log saved to ../results/logs/lr_sweep/sgd_lr3.0.json

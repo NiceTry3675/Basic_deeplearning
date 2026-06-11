@@ -1,0 +1,23 @@
+=== sgd / cosine | lr=1.0 | batch=128 | epochs=20 | seed=123 ===
+[Epoch  1] LR: 1.000000 | Train Loss: 0.279928, Train Acc: 91.89% | Val Loss: 0.119776, Val Acc: 96.43% | 1.7s
+[Epoch  2] LR: 0.993906 | Train Loss: 0.121331, Train Acc: 96.23% | Val Loss: 0.101052, Val Acc: 96.95% | 1.5s
+[Epoch  3] LR: 0.975773 | Train Loss: 0.089373, Train Acc: 97.19% | Val Loss: 0.077156, Val Acc: 97.67% | 1.3s
+[Epoch  4] LR: 0.946048 | Train Loss: 0.073421, Train Acc: 97.68% | Val Loss: 0.072126, Val Acc: 97.80% | 1.4s
+[Epoch  5] LR: 0.905463 | Train Loss: 0.057928, Train Acc: 98.17% | Val Loss: 0.069167, Val Acc: 97.93% | 1.3s
+[Epoch  6] LR: 0.855018 | Train Loss: 0.049847, Train Acc: 98.36% | Val Loss: 0.067417, Val Acc: 97.92% | 1.4s
+[Epoch  7] LR: 0.795954 | Train Loss: 0.043090, Train Acc: 98.59% | Val Loss: 0.065208, Val Acc: 98.05% | 1.4s
+[Epoch  8] LR: 0.729725 | Train Loss: 0.037410, Train Acc: 98.74% | Val Loss: 0.062103, Val Acc: 98.18% | 1.3s
+[Epoch  9] LR: 0.657963 | Train Loss: 0.033604, Train Acc: 98.86% | Val Loss: 0.060163, Val Acc: 98.27% | 1.4s
+[Epoch 10] LR: 0.582435 | Train Loss: 0.026038, Train Acc: 99.12% | Val Loss: 0.058663, Val Acc: 98.33% | 1.3s
+[Epoch 11] LR: 0.505000 | Train Loss: 0.022874, Train Acc: 99.26% | Val Loss: 0.062044, Val Acc: 98.17% | 1.3s
+[Epoch 12] LR: 0.427565 | Train Loss: 0.021535, Train Acc: 99.28% | Val Loss: 0.061324, Val Acc: 98.23% | 1.3s
+[Epoch 13] LR: 0.352037 | Train Loss: 0.018202, Train Acc: 99.37% | Val Loss: 0.052817, Val Acc: 98.43% | 1.4s
+[Epoch 14] LR: 0.280275 | Train Loss: 0.015927, Train Acc: 99.44% | Val Loss: 0.055279, Val Acc: 98.42% | 1.3s
+[Epoch 15] LR: 0.214046 | Train Loss: 0.012589, Train Acc: 99.58% | Val Loss: 0.054234, Val Acc: 98.52% | 1.3s
+[Epoch 16] LR: 0.154982 | Train Loss: 0.014004, Train Acc: 99.52% | Val Loss: 0.054165, Val Acc: 98.47% | 1.3s
+[Epoch 17] LR: 0.104537 | Train Loss: 0.012188, Train Acc: 99.61% | Val Loss: 0.053647, Val Acc: 98.43% | 1.3s
+[Epoch 18] LR: 0.063952 | Train Loss: 0.011373, Train Acc: 99.64% | Val Loss: 0.054903, Val Acc: 98.45% | 1.3s
+[Epoch 19] LR: 0.034227 | Train Loss: 0.010827, Train Acc: 99.64% | Val Loss: 0.054182, Val Acc: 98.43% | 1.3s
+[Epoch 20] LR: 0.016094 | Train Loss: 0.010885, Train Acc: 99.66% | Val Loss: 0.054322, Val Acc: 98.45% | 1.3s
+## Test Loss: 0.051878, Test Acc: 98.43% (total 27.2s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/schedulers/cosine_s123.json

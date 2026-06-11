@@ -1,0 +1,126 @@
+
+========== Fold 1/5 ==========
+[Epoch  1] LR: 0.120000 | Train Loss: 0.292684, Train Acc: 91.53% | Val Loss: 0.134210, Val Acc: 95.72% | 1.3s
+[Epoch  2] LR: 0.313091 | Train Loss: 0.173004, Train Acc: 94.64% | Val Loss: 0.116015, Val Acc: 96.48% | 0.9s
+[Epoch  3] LR: 0.840581 | Train Loss: 0.150093, Train Acc: 95.42% | Val Loss: 0.190066, Val Acc: 93.88% | 0.9s
+[Epoch  4] LR: 1.561006 | Train Loss: 0.129397, Train Acc: 95.96% | Val Loss: 0.098135, Val Acc: 97.11% | 1.0s
+[Epoch  5] LR: 2.281161 | Train Loss: 0.102385, Train Acc: 96.79% | Val Loss: 0.076684, Val Acc: 97.62% | 1.1s
+[Epoch  6] LR: 2.807914 | Train Loss: 0.087495, Train Acc: 97.25% | Val Loss: 0.072380, Val Acc: 97.72% | 1.1s
+[Epoch  7] LR: 3.000000 | Train Loss: 0.072731, Train Acc: 97.66% | Val Loss: 0.073422, Val Acc: 97.88% | 1.0s
+[Epoch  8] LR: 2.962192 | Train Loss: 0.057239, Train Acc: 98.21% | Val Loss: 0.072524, Val Acc: 97.93% | 1.0s
+[Epoch  9] LR: 2.851064 | Train Loss: 0.048632, Train Acc: 98.39% | Val Loss: 0.086778, Val Acc: 97.73% | 1.1s
+[Epoch 10] LR: 2.672189 | Train Loss: 0.039672, Train Acc: 98.67% | Val Loss: 0.068497, Val Acc: 98.22% | 1.1s
+[Epoch 11] LR: 2.434535 | Train Loss: 0.034524, Train Acc: 98.87% | Val Loss: 0.063593, Val Acc: 98.47% | 1.0s
+[Epoch 12] LR: 2.150020 | Train Loss: 0.027844, Train Acc: 99.07% | Val Loss: 0.069956, Val Acc: 98.29% | 1.0s
+[Epoch 13] LR: 1.832911 | Train Loss: 0.022633, Train Acc: 99.27% | Val Loss: 0.060612, Val Acc: 98.65% | 1.1s
+[Epoch 14] LR: 1.499108 | Train Loss: 0.016995, Train Acc: 99.44% | Val Loss: 0.058364, Val Acc: 98.60% | 1.0s
+[Epoch 15] LR: 1.165351 | Train Loss: 0.013561, Train Acc: 99.58% | Val Loss: 0.059848, Val Acc: 98.72% | 1.0s
+[Epoch 16] LR: 0.848374 | Train Loss: 0.010286, Train Acc: 99.67% | Val Loss: 0.058646, Val Acc: 98.72% | 1.0s
+[Epoch 17] LR: 0.564073 | Train Loss: 0.010720, Train Acc: 99.66% | Val Loss: 0.058446, Val Acc: 98.70% | 1.0s
+[Epoch 18] LR: 0.326704 | Train Loss: 0.010019, Train Acc: 99.66% | Val Loss: 0.057915, Val Acc: 98.73% | 1.2s
+[Epoch 19] LR: 0.148169 | Train Loss: 0.009282, Train Acc: 99.72% | Val Loss: 0.059016, Val Acc: 98.75% | 1.1s
+[Epoch 20] LR: 0.037421 | Train Loss: 0.009079, Train Acc: 99.71% | Val Loss: 0.059488, Val Acc: 98.71% | 1.0s
+Fold 0 model saved to ../results/models/ensemble_rep142/mlp_mnist_fold0.pth (20.8s)
+
+========== Fold 2/5 ==========
+[Epoch  1] LR: 0.120000 | Train Loss: 0.295592, Train Acc: 91.42% | Val Loss: 0.137115, Val Acc: 95.94% | 1.1s
+[Epoch  2] LR: 0.313091 | Train Loss: 0.173476, Train Acc: 94.56% | Val Loss: 0.119043, Val Acc: 96.36% | 1.1s
+[Epoch  3] LR: 0.840581 | Train Loss: 0.152863, Train Acc: 95.25% | Val Loss: 0.105118, Val Acc: 96.81% | 1.3s
+[Epoch  4] LR: 1.561006 | Train Loss: 0.124970, Train Acc: 96.12% | Val Loss: 0.106702, Val Acc: 96.71% | 1.2s
+[Epoch  5] LR: 2.281161 | Train Loss: 0.105786, Train Acc: 96.73% | Val Loss: 0.103056, Val Acc: 97.07% | 1.1s
+[Epoch  6] LR: 2.807914 | Train Loss: 0.087703, Train Acc: 97.27% | Val Loss: 0.084564, Val Acc: 97.46% | 1.0s
+[Epoch  7] LR: 3.000000 | Train Loss: 0.071958, Train Acc: 97.74% | Val Loss: 0.070375, Val Acc: 97.90% | 1.2s
+[Epoch  8] LR: 2.962192 | Train Loss: 0.058679, Train Acc: 98.13% | Val Loss: 0.070644, Val Acc: 97.91% | 1.0s
+[Epoch  9] LR: 2.851064 | Train Loss: 0.047337, Train Acc: 98.49% | Val Loss: 0.067433, Val Acc: 98.03% | 1.0s
+[Epoch 10] LR: 2.672189 | Train Loss: 0.039994, Train Acc: 98.69% | Val Loss: 0.066363, Val Acc: 98.03% | 1.1s
+[Epoch 11] LR: 2.434535 | Train Loss: 0.032109, Train Acc: 98.94% | Val Loss: 0.066046, Val Acc: 98.28% | 1.0s
+[Epoch 12] LR: 2.150020 | Train Loss: 0.026978, Train Acc: 99.13% | Val Loss: 0.060056, Val Acc: 98.45% | 1.1s
+[Epoch 13] LR: 1.832911 | Train Loss: 0.022615, Train Acc: 99.23% | Val Loss: 0.063707, Val Acc: 98.32% | 1.0s
+[Epoch 14] LR: 1.499108 | Train Loss: 0.016695, Train Acc: 99.44% | Val Loss: 0.063390, Val Acc: 98.41% | 1.0s
+[Epoch 15] LR: 1.165351 | Train Loss: 0.015382, Train Acc: 99.46% | Val Loss: 0.063163, Val Acc: 98.47% | 1.0s
+[Epoch 16] LR: 0.848374 | Train Loss: 0.011850, Train Acc: 99.62% | Val Loss: 0.064186, Val Acc: 98.41% | 0.9s
+[Epoch 17] LR: 0.564073 | Train Loss: 0.010053, Train Acc: 99.68% | Val Loss: 0.062844, Val Acc: 98.46% | 1.1s
+[Epoch 18] LR: 0.326704 | Train Loss: 0.009523, Train Acc: 99.70% | Val Loss: 0.063536, Val Acc: 98.42% | 1.1s
+[Epoch 19] LR: 0.148169 | Train Loss: 0.009070, Train Acc: 99.71% | Val Loss: 0.062923, Val Acc: 98.47% | 1.0s
+[Epoch 20] LR: 0.037421 | Train Loss: 0.007760, Train Acc: 99.75% | Val Loss: 0.063915, Val Acc: 98.42% | 1.0s
+Fold 1 model saved to ../results/models/ensemble_rep142/mlp_mnist_fold1.pth (21.2s)
+
+========== Fold 3/5 ==========
+[Epoch  1] LR: 0.120000 | Train Loss: 0.293344, Train Acc: 91.56% | Val Loss: 0.157633, Val Acc: 95.22% | 1.0s
+[Epoch  2] LR: 0.313091 | Train Loss: 0.168347, Train Acc: 94.84% | Val Loss: 0.134955, Val Acc: 95.96% | 1.1s
+[Epoch  3] LR: 0.840581 | Train Loss: 0.152845, Train Acc: 95.32% | Val Loss: 0.121959, Val Acc: 96.54% | 1.1s
+[Epoch  4] LR: 1.561006 | Train Loss: 0.129016, Train Acc: 96.03% | Val Loss: 0.089917, Val Acc: 97.33% | 1.0s
+[Epoch  5] LR: 2.281161 | Train Loss: 0.102612, Train Acc: 96.80% | Val Loss: 0.086952, Val Acc: 97.47% | 1.0s
+[Epoch  6] LR: 2.807914 | Train Loss: 0.086177, Train Acc: 97.35% | Val Loss: 0.094990, Val Acc: 97.33% | 1.0s
+[Epoch  7] LR: 3.000000 | Train Loss: 0.070133, Train Acc: 97.76% | Val Loss: 0.083562, Val Acc: 97.69% | 1.1s
+[Epoch  8] LR: 2.962192 | Train Loss: 0.057804, Train Acc: 98.02% | Val Loss: 0.080391, Val Acc: 97.89% | 1.1s
+[Epoch  9] LR: 2.851064 | Train Loss: 0.051356, Train Acc: 98.33% | Val Loss: 0.076992, Val Acc: 98.01% | 1.1s
+[Epoch 10] LR: 2.672189 | Train Loss: 0.042635, Train Acc: 98.63% | Val Loss: 0.071764, Val Acc: 98.16% | 1.3s
+[Epoch 11] LR: 2.434535 | Train Loss: 0.032959, Train Acc: 98.85% | Val Loss: 0.065900, Val Acc: 98.33% | 1.0s
+[Epoch 12] LR: 2.150020 | Train Loss: 0.025259, Train Acc: 99.15% | Val Loss: 0.065818, Val Acc: 98.35% | 1.0s
+[Epoch 13] LR: 1.832911 | Train Loss: 0.022162, Train Acc: 99.23% | Val Loss: 0.067426, Val Acc: 98.43% | 1.0s
+[Epoch 14] LR: 1.499108 | Train Loss: 0.017500, Train Acc: 99.43% | Val Loss: 0.064568, Val Acc: 98.56% | 1.0s
+[Epoch 15] LR: 1.165351 | Train Loss: 0.014179, Train Acc: 99.49% | Val Loss: 0.063641, Val Acc: 98.60% | 1.1s
+[Epoch 16] LR: 0.848374 | Train Loss: 0.010881, Train Acc: 99.62% | Val Loss: 0.062579, Val Acc: 98.65% | 1.0s
+[Epoch 17] LR: 0.564073 | Train Loss: 0.011061, Train Acc: 99.62% | Val Loss: 0.062170, Val Acc: 98.68% | 1.0s
+[Epoch 18] LR: 0.326704 | Train Loss: 0.008440, Train Acc: 99.74% | Val Loss: 0.063802, Val Acc: 98.67% | 1.1s
+[Epoch 19] LR: 0.148169 | Train Loss: 0.008566, Train Acc: 99.72% | Val Loss: 0.062688, Val Acc: 98.69% | 1.0s
+[Epoch 20] LR: 0.037421 | Train Loss: 0.008538, Train Acc: 99.70% | Val Loss: 0.062813, Val Acc: 98.67% | 1.0s
+Fold 2 model saved to ../results/models/ensemble_rep142/mlp_mnist_fold2.pth (21.2s)
+
+========== Fold 4/5 ==========
+[Epoch  1] LR: 0.120000 | Train Loss: 0.288491, Train Acc: 91.75% | Val Loss: 0.143228, Val Acc: 95.83% | 1.1s
+[Epoch  2] LR: 0.313091 | Train Loss: 0.173103, Train Acc: 94.54% | Val Loss: 0.193995, Val Acc: 94.70% | 0.9s
+[Epoch  3] LR: 0.840581 | Train Loss: 0.146911, Train Acc: 95.47% | Val Loss: 0.116649, Val Acc: 96.48% | 1.0s
+[Epoch  4] LR: 1.561006 | Train Loss: 0.129374, Train Acc: 95.98% | Val Loss: 0.097099, Val Acc: 97.00% | 1.0s
+[Epoch  5] LR: 2.281161 | Train Loss: 0.104279, Train Acc: 96.76% | Val Loss: 0.083287, Val Acc: 97.61% | 1.0s
+[Epoch  6] LR: 2.807914 | Train Loss: 0.086957, Train Acc: 97.29% | Val Loss: 0.078049, Val Acc: 97.70% | 1.0s
+[Epoch  7] LR: 3.000000 | Train Loss: 0.069206, Train Acc: 97.80% | Val Loss: 0.082920, Val Acc: 97.61% | 1.0s
+[Epoch  8] LR: 2.962192 | Train Loss: 0.057875, Train Acc: 98.10% | Val Loss: 0.069735, Val Acc: 97.97% | 1.0s
+[Epoch  9] LR: 2.851064 | Train Loss: 0.049384, Train Acc: 98.40% | Val Loss: 0.068976, Val Acc: 98.05% | 1.0s
+[Epoch 10] LR: 2.672189 | Train Loss: 0.041853, Train Acc: 98.62% | Val Loss: 0.067918, Val Acc: 98.07% | 1.2s
+[Epoch 11] LR: 2.434535 | Train Loss: 0.031788, Train Acc: 98.87% | Val Loss: 0.066976, Val Acc: 98.26% | 1.0s
+[Epoch 12] LR: 2.150020 | Train Loss: 0.027885, Train Acc: 99.09% | Val Loss: 0.068410, Val Acc: 98.21% | 0.9s
+[Epoch 13] LR: 1.832911 | Train Loss: 0.021241, Train Acc: 99.30% | Val Loss: 0.065800, Val Acc: 98.35% | 1.1s
+[Epoch 14] LR: 1.499108 | Train Loss: 0.017671, Train Acc: 99.41% | Val Loss: 0.064523, Val Acc: 98.48% | 1.1s
+[Epoch 15] LR: 1.165351 | Train Loss: 0.014733, Train Acc: 99.48% | Val Loss: 0.061677, Val Acc: 98.53% | 1.0s
+[Epoch 16] LR: 0.848374 | Train Loss: 0.011420, Train Acc: 99.65% | Val Loss: 0.062300, Val Acc: 98.49% | 1.0s
+[Epoch 17] LR: 0.564073 | Train Loss: 0.011863, Train Acc: 99.63% | Val Loss: 0.062379, Val Acc: 98.48% | 1.0s
+[Epoch 18] LR: 0.326704 | Train Loss: 0.009413, Train Acc: 99.69% | Val Loss: 0.061605, Val Acc: 98.53% | 1.1s
+[Epoch 19] LR: 0.148169 | Train Loss: 0.008577, Train Acc: 99.72% | Val Loss: 0.062333, Val Acc: 98.55% | 1.0s
+[Epoch 20] LR: 0.037421 | Train Loss: 0.007502, Train Acc: 99.73% | Val Loss: 0.061995, Val Acc: 98.57% | 1.0s
+Fold 3 model saved to ../results/models/ensemble_rep142/mlp_mnist_fold3.pth (20.7s)
+
+========== Fold 5/5 ==========
+[Epoch  1] LR: 0.120000 | Train Loss: 0.299638, Train Acc: 91.44% | Val Loss: 0.143763, Val Acc: 95.66% | 1.0s
+[Epoch  2] LR: 0.313091 | Train Loss: 0.170328, Train Acc: 94.64% | Val Loss: 0.141587, Val Acc: 95.50% | 1.1s
+[Epoch  3] LR: 0.840581 | Train Loss: 0.152912, Train Acc: 95.28% | Val Loss: 0.103652, Val Acc: 96.82% | 1.0s
+[Epoch  4] LR: 1.561006 | Train Loss: 0.127092, Train Acc: 96.15% | Val Loss: 0.093817, Val Acc: 97.12% | 1.0s
+[Epoch  5] LR: 2.281161 | Train Loss: 0.108552, Train Acc: 96.69% | Val Loss: 0.087428, Val Acc: 97.26% | 1.0s
+[Epoch  6] LR: 2.807914 | Train Loss: 0.086105, Train Acc: 97.23% | Val Loss: 0.074026, Val Acc: 97.63% | 1.0s
+[Epoch  7] LR: 3.000000 | Train Loss: 0.073402, Train Acc: 97.71% | Val Loss: 0.069526, Val Acc: 97.88% | 1.0s
+[Epoch  8] LR: 2.962192 | Train Loss: 0.059438, Train Acc: 98.12% | Val Loss: 0.072582, Val Acc: 97.94% | 1.1s
+[Epoch  9] LR: 2.851064 | Train Loss: 0.049071, Train Acc: 98.45% | Val Loss: 0.059594, Val Acc: 98.16% | 1.0s
+[Epoch 10] LR: 2.672189 | Train Loss: 0.043425, Train Acc: 98.61% | Val Loss: 0.065759, Val Acc: 98.12% | 1.0s
+[Epoch 11] LR: 2.434535 | Train Loss: 0.033175, Train Acc: 98.85% | Val Loss: 0.064154, Val Acc: 98.07% | 1.1s
+[Epoch 12] LR: 2.150020 | Train Loss: 0.028393, Train Acc: 99.10% | Val Loss: 0.057791, Val Acc: 98.23% | 1.0s
+[Epoch 13] LR: 1.832911 | Train Loss: 0.022401, Train Acc: 99.26% | Val Loss: 0.057946, Val Acc: 98.22% | 1.0s
+[Epoch 14] LR: 1.499108 | Train Loss: 0.017902, Train Acc: 99.40% | Val Loss: 0.056046, Val Acc: 98.38% | 1.2s
+[Epoch 15] LR: 1.165351 | Train Loss: 0.016043, Train Acc: 99.47% | Val Loss: 0.052871, Val Acc: 98.45% | 1.2s
+[Epoch 16] LR: 0.848374 | Train Loss: 0.012227, Train Acc: 99.59% | Val Loss: 0.053764, Val Acc: 98.46% | 1.2s
+[Epoch 17] LR: 0.564073 | Train Loss: 0.010371, Train Acc: 99.66% | Val Loss: 0.053626, Val Acc: 98.49% | 1.0s
+[Epoch 18] LR: 0.326704 | Train Loss: 0.008239, Train Acc: 99.75% | Val Loss: 0.053474, Val Acc: 98.53% | 0.9s
+[Epoch 19] LR: 0.148169 | Train Loss: 0.009763, Train Acc: 99.66% | Val Loss: 0.052995, Val Acc: 98.53% | 0.9s
+[Epoch 20] LR: 0.037421 | Train Loss: 0.008531, Train Acc: 99.71% | Val Loss: 0.053093, Val Acc: 98.49% | 0.9s
+Fold 4 model saved to ../results/models/ensemble_rep142/mlp_mnist_fold4.pth (20.8s)
+Fold 0 Test Accuracy: 98.59%
+Fold 1 Test Accuracy: 98.64%
+Fold 2 Test Accuracy: 98.67%
+Fold 3 Test Accuracy: 98.60%
+Fold 4 Test Accuracy: 98.56%
+
+Single-model mean accuracy : 98.61% (min 98.56%, max 98.67%)
+## Ensemble (Hard Voting) Test Accuracy: 98.78%
+## Ensemble (Soft Voting) Test Accuracy: 98.74%
+McNemar (soft ensemble vs best fold 2): ensemble-only-correct=27, fold-only-correct=20, p=0.3817
+Log saved to ../results/logs/ensemble_rep142/ensemble_test.json

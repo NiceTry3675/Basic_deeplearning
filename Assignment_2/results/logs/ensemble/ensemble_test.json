@@ -1,0 +1,148 @@
+{
+  "config": {
+    "model_prefix": "/home/tomto/projects/Basic_deeplearning/Assignment_2/results/models/ensemble/mlp_mnist",
+    "k_splits": 5,
+    "batch_size": 512,
+    "device": "cuda",
+    "log_path": "/home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/ensemble/ensemble_test.json"
+  },
+  "fold_accuracies": [
+    98.59,
+    98.45,
+    98.63,
+    98.61999999999999,
+    98.56
+  ],
+  "single_mean_acc": 98.57000000000001,
+  "single_max_acc": 98.63,
+  "hard_voting_acc": 98.72,
+  "soft_voting_acc": 98.74000000000001,
+  "mcnemar_vs_best_fold": {
+    "best_fold": 2,
+    "ensemble_only_correct": 32,
+    "fold_only_correct": 21,
+    "p_value": 0.16897782228771874
+  },
+  "confusion_matrix_soft": [
+    [
+      975,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1130,
+      1,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1018,
+      2,
+      1,
+      0,
+      1,
+      7,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      995,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      965,
+      0,
+      4,
+      2,
+      0,
+      8
+    ],
+    [
+      2,
+      0,
+      0,
+      5,
+      1,
+      879,
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      2,
+      2,
+      0,
+      1,
+      2,
+      3,
+      948,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      7,
+      1,
+      0,
+      0,
+      0,
+      1016,
+      1,
+      3
+    ],
+    [
+      3,
+      0,
+      2,
+      3,
+      2,
+      1,
+      0,
+      2,
+      957,
+      4
+    ],
+    [
+      3,
+      2,
+      0,
+      3,
+      7,
+      0,
+      0,
+      3,
+      0,
+      991
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+=== sgd_nesterov / none | lr=0.03 | batch=128 | epochs=20 | seed=42 ===
+[Epoch  1] LR: 0.030000 | Train Loss: 0.242931, Train Acc: 92.61% | Val Loss: 0.118830, Val Acc: 96.47% | 1.8s
+[Epoch  2] LR: 0.030000 | Train Loss: 0.120257, Train Acc: 96.30% | Val Loss: 0.089819, Val Acc: 97.25% | 1.4s
+[Epoch  3] LR: 0.030000 | Train Loss: 0.089641, Train Acc: 97.15% | Val Loss: 0.081660, Val Acc: 97.48% | 1.4s
+[Epoch  4] LR: 0.030000 | Train Loss: 0.075671, Train Acc: 97.56% | Val Loss: 0.071388, Val Acc: 97.82% | 1.5s
+[Epoch  5] LR: 0.030000 | Train Loss: 0.062762, Train Acc: 97.96% | Val Loss: 0.070046, Val Acc: 97.77% | 1.4s
+[Epoch  6] LR: 0.030000 | Train Loss: 0.057919, Train Acc: 98.11% | Val Loss: 0.068255, Val Acc: 97.87% | 1.6s
+[Epoch  7] LR: 0.030000 | Train Loss: 0.050145, Train Acc: 98.35% | Val Loss: 0.062599, Val Acc: 98.07% | 1.4s
+[Epoch  8] LR: 0.030000 | Train Loss: 0.045024, Train Acc: 98.52% | Val Loss: 0.065025, Val Acc: 98.00% | 1.4s
+[Epoch  9] LR: 0.030000 | Train Loss: 0.039934, Train Acc: 98.70% | Val Loss: 0.067292, Val Acc: 98.07% | 1.4s
+[Epoch 10] LR: 0.030000 | Train Loss: 0.036139, Train Acc: 98.77% | Val Loss: 0.065355, Val Acc: 98.15% | 1.4s
+[Epoch 11] LR: 0.030000 | Train Loss: 0.034416, Train Acc: 98.84% | Val Loss: 0.062779, Val Acc: 98.08% | 1.4s
+[Epoch 12] LR: 0.030000 | Train Loss: 0.029034, Train Acc: 99.01% | Val Loss: 0.061893, Val Acc: 98.18% | 1.3s
+[Epoch 13] LR: 0.030000 | Train Loss: 0.027160, Train Acc: 99.11% | Val Loss: 0.068526, Val Acc: 98.12% | 1.3s
+[Epoch 14] LR: 0.030000 | Train Loss: 0.026588, Train Acc: 99.08% | Val Loss: 0.069218, Val Acc: 97.98% | 1.3s
+[Epoch 15] LR: 0.030000 | Train Loss: 0.023426, Train Acc: 99.23% | Val Loss: 0.066984, Val Acc: 98.18% | 1.3s
+[Epoch 16] LR: 0.030000 | Train Loss: 0.023388, Train Acc: 99.21% | Val Loss: 0.064963, Val Acc: 98.00% | 1.3s
+[Epoch 17] LR: 0.030000 | Train Loss: 0.021388, Train Acc: 99.26% | Val Loss: 0.058545, Val Acc: 98.25% | 1.4s
+[Epoch 18] LR: 0.030000 | Train Loss: 0.019294, Train Acc: 99.34% | Val Loss: 0.061376, Val Acc: 98.23% | 1.3s
+[Epoch 19] LR: 0.030000 | Train Loss: 0.020751, Train Acc: 99.28% | Val Loss: 0.061780, Val Acc: 98.28% | 1.4s
+[Epoch 20] LR: 0.030000 | Train Loss: 0.018677, Train Acc: 99.35% | Val Loss: 0.066945, Val Acc: 98.07% | 1.4s
+## Test Loss: 0.058001, Test Acc: 98.33% (total 28.2s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/optimizers/sgd_nesterov_s42.json

@@ -1,0 +1,23 @@
+=== sgd / plateau | lr=1.0 | batch=128 | epochs=20 | seed=42 ===
+[Epoch  1] LR: 1.000000 | Train Loss: 0.261204, Train Acc: 92.24% | Val Loss: 0.114295, Val Acc: 96.37% | 1.7s
+[Epoch  2] LR: 1.000000 | Train Loss: 0.122606, Train Acc: 96.20% | Val Loss: 0.089937, Val Acc: 97.25% | 1.3s
+[Epoch  3] LR: 1.000000 | Train Loss: 0.089627, Train Acc: 97.13% | Val Loss: 0.076658, Val Acc: 97.55% | 1.3s
+[Epoch  4] LR: 1.000000 | Train Loss: 0.072734, Train Acc: 97.65% | Val Loss: 0.068978, Val Acc: 97.88% | 1.4s
+[Epoch  5] LR: 1.000000 | Train Loss: 0.062702, Train Acc: 98.01% | Val Loss: 0.070570, Val Acc: 97.97% | 1.4s
+[Epoch  6] LR: 1.000000 | Train Loss: 0.055298, Train Acc: 98.17% | Val Loss: 0.070877, Val Acc: 97.85% | 1.4s
+[Epoch  7] LR: 1.000000 | Train Loss: 0.046438, Train Acc: 98.48% | Val Loss: 0.061053, Val Acc: 98.03% | 1.4s
+[Epoch  8] LR: 1.000000 | Train Loss: 0.042390, Train Acc: 98.59% | Val Loss: 0.066115, Val Acc: 98.17% | 1.4s
+[Epoch  9] LR: 1.000000 | Train Loss: 0.038640, Train Acc: 98.67% | Val Loss: 0.068941, Val Acc: 98.00% | 1.3s
+[Epoch 10] LR: 1.000000 | Train Loss: 0.034128, Train Acc: 98.88% | Val Loss: 0.063484, Val Acc: 98.37% | 1.3s
+[Epoch 11] LR: 0.500000 | Train Loss: 0.022639, Train Acc: 99.21% | Val Loss: 0.057354, Val Acc: 98.53% | 1.4s
+[Epoch 12] LR: 0.500000 | Train Loss: 0.019035, Train Acc: 99.35% | Val Loss: 0.056955, Val Acc: 98.47% | 1.3s
+[Epoch 13] LR: 0.500000 | Train Loss: 0.017447, Train Acc: 99.42% | Val Loss: 0.058864, Val Acc: 98.23% | 1.3s
+[Epoch 14] LR: 0.500000 | Train Loss: 0.017184, Train Acc: 99.42% | Val Loss: 0.060129, Val Acc: 98.37% | 1.4s
+[Epoch 15] LR: 0.500000 | Train Loss: 0.014222, Train Acc: 99.54% | Val Loss: 0.058816, Val Acc: 98.35% | 1.4s
+[Epoch 16] LR: 0.250000 | Train Loss: 0.012494, Train Acc: 99.59% | Val Loss: 0.061188, Val Acc: 98.42% | 1.4s
+[Epoch 17] LR: 0.250000 | Train Loss: 0.011422, Train Acc: 99.64% | Val Loss: 0.058874, Val Acc: 98.42% | 1.5s
+[Epoch 18] LR: 0.250000 | Train Loss: 0.010107, Train Acc: 99.66% | Val Loss: 0.057197, Val Acc: 98.45% | 1.4s
+[Epoch 19] LR: 0.125000 | Train Loss: 0.010614, Train Acc: 99.66% | Val Loss: 0.057375, Val Acc: 98.42% | 1.4s
+[Epoch 20] LR: 0.125000 | Train Loss: 0.009377, Train Acc: 99.69% | Val Loss: 0.058397, Val Acc: 98.50% | 1.4s
+## Test Loss: 0.050021, Test Acc: 98.55% (total 28.0s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/schedulers/plateau_s42.json

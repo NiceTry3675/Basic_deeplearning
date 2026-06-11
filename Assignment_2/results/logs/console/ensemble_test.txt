@@ -1,0 +1,11 @@
+Fold 0 Test Accuracy: 98.59%
+Fold 1 Test Accuracy: 98.45%
+Fold 2 Test Accuracy: 98.63%
+Fold 3 Test Accuracy: 98.62%
+Fold 4 Test Accuracy: 98.56%
+
+Single-model mean accuracy : 98.57% (min 98.45%, max 98.63%)
+## Ensemble (Hard Voting) Test Accuracy: 98.72%
+## Ensemble (Soft Voting) Test Accuracy: 98.74%
+McNemar (soft ensemble vs best fold 2): ensemble-only-correct=32, fold-only-correct=21, p=0.1690
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/ensemble/ensemble_test.json

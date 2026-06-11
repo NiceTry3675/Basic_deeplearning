@@ -1,0 +1,23 @@
+=== sgd_momentum / none | lr=0.03 | batch=128 | epochs=20 | seed=2025 ===
+[Epoch  1] LR: 0.030000 | Train Loss: 0.254662, Train Acc: 92.27% | Val Loss: 0.113104, Val Acc: 96.48% | 1.7s
+[Epoch  2] LR: 0.030000 | Train Loss: 0.121174, Train Acc: 96.31% | Val Loss: 0.093603, Val Acc: 97.13% | 1.3s
+[Epoch  3] LR: 0.030000 | Train Loss: 0.092630, Train Acc: 97.06% | Val Loss: 0.079091, Val Acc: 97.70% | 1.4s
+[Epoch  4] LR: 0.030000 | Train Loss: 0.076092, Train Acc: 97.56% | Val Loss: 0.075896, Val Acc: 97.78% | 1.4s
+[Epoch  5] LR: 0.030000 | Train Loss: 0.066388, Train Acc: 97.86% | Val Loss: 0.067956, Val Acc: 97.93% | 1.4s
+[Epoch  6] LR: 0.030000 | Train Loss: 0.057960, Train Acc: 98.16% | Val Loss: 0.064345, Val Acc: 97.98% | 1.5s
+[Epoch  7] LR: 0.030000 | Train Loss: 0.047923, Train Acc: 98.39% | Val Loss: 0.065583, Val Acc: 97.97% | 1.4s
+[Epoch  8] LR: 0.030000 | Train Loss: 0.043260, Train Acc: 98.61% | Val Loss: 0.067267, Val Acc: 97.93% | 1.4s
+[Epoch  9] LR: 0.030000 | Train Loss: 0.042296, Train Acc: 98.56% | Val Loss: 0.066099, Val Acc: 97.98% | 1.4s
+[Epoch 10] LR: 0.030000 | Train Loss: 0.035675, Train Acc: 98.84% | Val Loss: 0.062323, Val Acc: 98.05% | 1.5s
+[Epoch 11] LR: 0.030000 | Train Loss: 0.033320, Train Acc: 98.90% | Val Loss: 0.060794, Val Acc: 98.15% | 1.3s
+[Epoch 12] LR: 0.030000 | Train Loss: 0.030266, Train Acc: 98.97% | Val Loss: 0.064355, Val Acc: 98.17% | 1.4s
+[Epoch 13] LR: 0.030000 | Train Loss: 0.028969, Train Acc: 98.99% | Val Loss: 0.060405, Val Acc: 98.17% | 1.4s
+[Epoch 14] LR: 0.030000 | Train Loss: 0.026747, Train Acc: 99.11% | Val Loss: 0.060299, Val Acc: 98.27% | 1.4s
+[Epoch 15] LR: 0.030000 | Train Loss: 0.025661, Train Acc: 99.11% | Val Loss: 0.063453, Val Acc: 98.28% | 1.5s
+[Epoch 16] LR: 0.030000 | Train Loss: 0.021702, Train Acc: 99.26% | Val Loss: 0.057262, Val Acc: 98.40% | 1.4s
+[Epoch 17] LR: 0.030000 | Train Loss: 0.022548, Train Acc: 99.24% | Val Loss: 0.062631, Val Acc: 98.25% | 1.4s
+[Epoch 18] LR: 0.030000 | Train Loss: 0.021658, Train Acc: 99.28% | Val Loss: 0.061395, Val Acc: 98.07% | 1.4s
+[Epoch 19] LR: 0.030000 | Train Loss: 0.018226, Train Acc: 99.36% | Val Loss: 0.060119, Val Acc: 98.22% | 1.4s
+[Epoch 20] LR: 0.030000 | Train Loss: 0.018815, Train Acc: 99.36% | Val Loss: 0.063670, Val Acc: 98.12% | 1.4s
+## Test Loss: 0.063667, Test Acc: 98.25% (total 28.4s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/optimizers/sgd_momentum_s2025.json

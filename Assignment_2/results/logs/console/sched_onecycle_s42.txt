@@ -1,0 +1,23 @@
+=== sgd / onecycle | lr=1.0 | batch=128 | epochs=20 | seed=42 ===
+[Epoch  1] LR: 0.120000 | Train Loss: 0.275927, Train Acc: 91.98% | Val Loss: 0.142100, Val Acc: 95.85% | 1.7s
+[Epoch  2] LR: 0.313072 | Train Loss: 0.163999, Train Acc: 94.91% | Val Loss: 0.130471, Val Acc: 95.95% | 1.4s
+[Epoch  3] LR: 0.840516 | Train Loss: 0.143155, Train Acc: 95.53% | Val Loss: 0.110506, Val Acc: 96.38% | 1.4s
+[Epoch  4] LR: 1.560894 | Train Loss: 0.122483, Train Acc: 96.29% | Val Loss: 0.085333, Val Acc: 97.27% | 1.3s
+[Epoch  5] LR: 2.281032 | Train Loss: 0.100421, Train Acc: 96.91% | Val Loss: 0.101998, Val Acc: 96.97% | 1.4s
+[Epoch  6] LR: 2.807821 | Train Loss: 0.086439, Train Acc: 97.35% | Val Loss: 0.082465, Val Acc: 97.50% | 1.5s
+[Epoch  7] LR: 3.000000 | Train Loss: 0.067846, Train Acc: 97.87% | Val Loss: 0.079054, Val Acc: 97.70% | 1.4s
+[Epoch  8] LR: 2.962214 | Train Loss: 0.060429, Train Acc: 98.09% | Val Loss: 0.070967, Val Acc: 97.90% | 1.3s
+[Epoch  9] LR: 2.851108 | Train Loss: 0.047747, Train Acc: 98.44% | Val Loss: 0.072393, Val Acc: 98.10% | 1.3s
+[Epoch 10] LR: 2.672251 | Train Loss: 0.040308, Train Acc: 98.66% | Val Loss: 0.066962, Val Acc: 98.05% | 1.3s
+[Epoch 11] LR: 2.434613 | Train Loss: 0.031842, Train Acc: 98.96% | Val Loss: 0.065709, Val Acc: 98.15% | 1.3s
+[Epoch 12] LR: 2.150110 | Train Loss: 0.025548, Train Acc: 99.18% | Val Loss: 0.060227, Val Acc: 98.23% | 1.4s
+[Epoch 13] LR: 1.833008 | Train Loss: 0.022070, Train Acc: 99.25% | Val Loss: 0.061747, Val Acc: 98.27% | 1.3s
+[Epoch 14] LR: 1.499208 | Train Loss: 0.017885, Train Acc: 99.39% | Val Loss: 0.063529, Val Acc: 98.30% | 1.3s
+[Epoch 15] LR: 1.165448 | Train Loss: 0.014505, Train Acc: 99.52% | Val Loss: 0.060559, Val Acc: 98.32% | 1.3s
+[Epoch 16] LR: 0.848464 | Train Loss: 0.012164, Train Acc: 99.61% | Val Loss: 0.058693, Val Acc: 98.50% | 1.4s
+[Epoch 17] LR: 0.564152 | Train Loss: 0.011329, Train Acc: 99.63% | Val Loss: 0.059686, Val Acc: 98.47% | 1.3s
+[Epoch 18] LR: 0.326766 | Train Loss: 0.009370, Train Acc: 99.69% | Val Loss: 0.056568, Val Acc: 98.45% | 1.4s
+[Epoch 19] LR: 0.148212 | Train Loss: 0.009309, Train Acc: 99.67% | Val Loss: 0.058003, Val Acc: 98.55% | 1.3s
+[Epoch 20] LR: 0.037443 | Train Loss: 0.009379, Train Acc: 99.70% | Val Loss: 0.057096, Val Acc: 98.60% | 1.3s
+## Test Loss: 0.053123, Test Acc: 98.56% (total 27.3s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/schedulers/onecycle_s42.json

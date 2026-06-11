@@ -1,0 +1,13 @@
+=== adam / none | lr=0.003 | batch=128 | epochs=10 | seed=42 ===
+[Epoch  1] LR: 0.003000 | Train Loss: 0.220547, Train Acc: 93.25% | Val Loss: 0.120371, Val Acc: 96.33% | 2.1s
+[Epoch  2] LR: 0.003000 | Train Loss: 0.116551, Train Acc: 96.36% | Val Loss: 0.091414, Val Acc: 97.28% | 1.8s
+[Epoch  3] LR: 0.003000 | Train Loss: 0.087290, Train Acc: 97.23% | Val Loss: 0.079138, Val Acc: 97.65% | 1.8s
+[Epoch  4] LR: 0.003000 | Train Loss: 0.070355, Train Acc: 97.73% | Val Loss: 0.067045, Val Acc: 97.88% | 1.8s
+[Epoch  5] LR: 0.003000 | Train Loss: 0.057413, Train Acc: 98.14% | Val Loss: 0.078977, Val Acc: 97.55% | 1.8s
+[Epoch  6] LR: 0.003000 | Train Loss: 0.056615, Train Acc: 98.12% | Val Loss: 0.069447, Val Acc: 97.83% | 1.9s
+[Epoch  7] LR: 0.003000 | Train Loss: 0.048319, Train Acc: 98.38% | Val Loss: 0.061399, Val Acc: 98.22% | 1.7s
+[Epoch  8] LR: 0.003000 | Train Loss: 0.042723, Train Acc: 98.55% | Val Loss: 0.079611, Val Acc: 97.72% | 1.7s
+[Epoch  9] LR: 0.003000 | Train Loss: 0.042846, Train Acc: 98.60% | Val Loss: 0.071253, Val Acc: 97.95% | 1.7s
+[Epoch 10] LR: 0.003000 | Train Loss: 0.036712, Train Acc: 98.74% | Val Loss: 0.064352, Val Acc: 98.13% | 1.7s
+## Test Loss: 0.059905, Test Acc: 98.33% (total 18.0s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/lr_sweep/adam_lr0.003.json

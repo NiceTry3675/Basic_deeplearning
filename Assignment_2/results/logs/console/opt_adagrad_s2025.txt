@@ -1,0 +1,23 @@
+=== adagrad / none | lr=0.1 | batch=128 | epochs=20 | seed=2025 ===
+[Epoch  1] LR: 0.100000 | Train Loss: 0.243235, Train Acc: 93.05% | Val Loss: 0.114328, Val Acc: 96.50% | 2.2s
+[Epoch  2] LR: 0.100000 | Train Loss: 0.105579, Train Acc: 96.72% | Val Loss: 0.086780, Val Acc: 97.30% | 1.5s
+[Epoch  3] LR: 0.100000 | Train Loss: 0.079428, Train Acc: 97.46% | Val Loss: 0.072951, Val Acc: 97.70% | 1.5s
+[Epoch  4] LR: 0.100000 | Train Loss: 0.060268, Train Acc: 98.08% | Val Loss: 0.068367, Val Acc: 97.95% | 1.5s
+[Epoch  5] LR: 0.100000 | Train Loss: 0.050724, Train Acc: 98.30% | Val Loss: 0.065995, Val Acc: 98.03% | 1.4s
+[Epoch  6] LR: 0.100000 | Train Loss: 0.043925, Train Acc: 98.57% | Val Loss: 0.066127, Val Acc: 98.13% | 1.5s
+[Epoch  7] LR: 0.100000 | Train Loss: 0.035228, Train Acc: 98.82% | Val Loss: 0.067374, Val Acc: 98.10% | 1.6s
+[Epoch  8] LR: 0.100000 | Train Loss: 0.031035, Train Acc: 99.00% | Val Loss: 0.066722, Val Acc: 98.15% | 1.7s
+[Epoch  9] LR: 0.100000 | Train Loss: 0.029729, Train Acc: 98.96% | Val Loss: 0.065677, Val Acc: 98.22% | 1.5s
+[Epoch 10] LR: 0.100000 | Train Loss: 0.026818, Train Acc: 99.09% | Val Loss: 0.062808, Val Acc: 98.30% | 1.5s
+[Epoch 11] LR: 0.100000 | Train Loss: 0.023572, Train Acc: 99.21% | Val Loss: 0.067815, Val Acc: 98.13% | 1.6s
+[Epoch 12] LR: 0.100000 | Train Loss: 0.021133, Train Acc: 99.32% | Val Loss: 0.066635, Val Acc: 98.15% | 1.6s
+[Epoch 13] LR: 0.100000 | Train Loss: 0.020980, Train Acc: 99.29% | Val Loss: 0.064716, Val Acc: 98.22% | 1.5s
+[Epoch 14] LR: 0.100000 | Train Loss: 0.018665, Train Acc: 99.35% | Val Loss: 0.062470, Val Acc: 98.33% | 1.5s
+[Epoch 15] LR: 0.100000 | Train Loss: 0.017214, Train Acc: 99.41% | Val Loss: 0.063850, Val Acc: 98.37% | 1.5s
+[Epoch 16] LR: 0.100000 | Train Loss: 0.016155, Train Acc: 99.45% | Val Loss: 0.064389, Val Acc: 98.23% | 1.5s
+[Epoch 17] LR: 0.100000 | Train Loss: 0.014638, Train Acc: 99.53% | Val Loss: 0.063677, Val Acc: 98.38% | 1.5s
+[Epoch 18] LR: 0.100000 | Train Loss: 0.014625, Train Acc: 99.49% | Val Loss: 0.062467, Val Acc: 98.35% | 1.5s
+[Epoch 19] LR: 0.100000 | Train Loss: 0.012202, Train Acc: 99.60% | Val Loss: 0.065444, Val Acc: 98.38% | 1.5s
+[Epoch 20] LR: 0.100000 | Train Loss: 0.012885, Train Acc: 99.58% | Val Loss: 0.065832, Val Acc: 98.28% | 1.5s
+## Test Loss: 0.059431, Test Acc: 98.38% (total 31.0s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/optimizers/adagrad_s2025.json

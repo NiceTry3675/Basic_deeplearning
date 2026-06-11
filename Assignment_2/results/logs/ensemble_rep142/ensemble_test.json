@@ -1,0 +1,148 @@
+{
+  "config": {
+    "model_prefix": "../results/models/ensemble_rep142/mlp_mnist",
+    "k_splits": 5,
+    "batch_size": 512,
+    "device": "cuda",
+    "log_path": "../results/logs/ensemble_rep142/ensemble_test.json"
+  },
+  "fold_accuracies": [
+    98.59,
+    98.64,
+    98.67,
+    98.6,
+    98.56
+  ],
+  "single_mean_acc": 98.612,
+  "single_max_acc": 98.67,
+  "hard_voting_acc": 98.78,
+  "soft_voting_acc": 98.74000000000001,
+  "mcnemar_vs_best_fold": {
+    "best_fold": 2,
+    "ensemble_only_correct": 27,
+    "fold_only_correct": 20,
+    "p_value": 0.38169339766321286
+  },
+  "confusion_matrix_soft": [
+    [
+      974,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1129,
+      2,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1019,
+      2,
+      1,
+      0,
+      1,
+      7,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      995,
+      0,
+      2,
+      0,
+      4,
+      2,
+      3
+    ],
+    [
+      1,
+      0,
+      2,
+      0,
+      966,
+      0,
+      3,
+      2,
+      0,
+      8
+    ],
+    [
+      2,
+      0,
+      0,
+      5,
+      1,
+      879,
+      1,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      0,
+      0,
+      2,
+      3,
+      948,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      7,
+      1,
+      0,
+      0,
+      0,
+      1014,
+      2,
+      2
+    ],
+    [
+      4,
+      0,
+      2,
+      0,
+      2,
+      0,
+      1,
+      2,
+      960,
+      3
+    ],
+    [
+      2,
+      2,
+      0,
+      4,
+      8,
+      0,
+      0,
+      3,
+      0,
+      990
+    ]
+  ]
+}

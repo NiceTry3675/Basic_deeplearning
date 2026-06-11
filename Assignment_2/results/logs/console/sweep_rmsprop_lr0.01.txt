@@ -1,0 +1,13 @@
+=== rmsprop / none | lr=0.01 | batch=128 | epochs=10 | seed=42 ===
+[Epoch  1] LR: 0.010000 | Train Loss: 0.263495, Train Acc: 92.35% | Val Loss: 0.115362, Val Acc: 96.53% | 1.5s
+[Epoch  2] LR: 0.010000 | Train Loss: 0.132428, Train Acc: 95.95% | Val Loss: 0.109031, Val Acc: 96.73% | 1.0s
+[Epoch  3] LR: 0.010000 | Train Loss: 0.100675, Train Acc: 96.83% | Val Loss: 0.082260, Val Acc: 97.40% | 1.0s
+[Epoch  4] LR: 0.010000 | Train Loss: 0.083855, Train Acc: 97.37% | Val Loss: 0.081046, Val Acc: 97.42% | 1.0s
+[Epoch  5] LR: 0.010000 | Train Loss: 0.072393, Train Acc: 97.71% | Val Loss: 0.069835, Val Acc: 97.88% | 1.0s
+[Epoch  6] LR: 0.010000 | Train Loss: 0.065237, Train Acc: 97.91% | Val Loss: 0.073753, Val Acc: 97.88% | 1.2s
+[Epoch  7] LR: 0.010000 | Train Loss: 0.059440, Train Acc: 98.07% | Val Loss: 0.073736, Val Acc: 98.02% | 1.2s
+[Epoch  8] LR: 0.010000 | Train Loss: 0.056577, Train Acc: 98.16% | Val Loss: 0.071126, Val Acc: 98.07% | 1.2s
+[Epoch  9] LR: 0.010000 | Train Loss: 0.052968, Train Acc: 98.34% | Val Loss: 0.068594, Val Acc: 98.12% | 1.3s
+[Epoch 10] LR: 0.010000 | Train Loss: 0.047996, Train Acc: 98.46% | Val Loss: 0.072571, Val Acc: 98.07% | 1.1s
+## Test Loss: 0.068786, Test Acc: 98.16% (total 11.6s)
+Log saved to ../results/logs/lr_sweep/rmsprop_lr0.01.json

@@ -1,0 +1,23 @@
+=== rmsprop / none | lr=0.001 | batch=128 | epochs=20 | seed=42 ===
+[Epoch  1] LR: 0.001000 | Train Loss: 0.209167, Train Acc: 93.62% | Val Loss: 0.113509, Val Acc: 96.65% | 1.8s
+[Epoch  2] LR: 0.001000 | Train Loss: 0.109450, Train Acc: 96.71% | Val Loss: 0.090360, Val Acc: 97.25% | 1.5s
+[Epoch  3] LR: 0.001000 | Train Loss: 0.082180, Train Acc: 97.36% | Val Loss: 0.076659, Val Acc: 97.60% | 1.5s
+[Epoch  4] LR: 0.001000 | Train Loss: 0.070115, Train Acc: 97.75% | Val Loss: 0.069702, Val Acc: 97.68% | 1.5s
+[Epoch  5] LR: 0.001000 | Train Loss: 0.059448, Train Acc: 98.08% | Val Loss: 0.077024, Val Acc: 97.70% | 1.4s
+[Epoch  6] LR: 0.001000 | Train Loss: 0.055506, Train Acc: 98.22% | Val Loss: 0.062174, Val Acc: 98.08% | 1.6s
+[Epoch  7] LR: 0.001000 | Train Loss: 0.046624, Train Acc: 98.44% | Val Loss: 0.061185, Val Acc: 98.22% | 1.5s
+[Epoch  8] LR: 0.001000 | Train Loss: 0.041118, Train Acc: 98.64% | Val Loss: 0.066148, Val Acc: 98.18% | 1.5s
+[Epoch  9] LR: 0.001000 | Train Loss: 0.038176, Train Acc: 98.72% | Val Loss: 0.063903, Val Acc: 98.23% | 1.5s
+[Epoch 10] LR: 0.001000 | Train Loss: 0.033131, Train Acc: 98.89% | Val Loss: 0.066503, Val Acc: 98.13% | 1.5s
+[Epoch 11] LR: 0.001000 | Train Loss: 0.032572, Train Acc: 98.94% | Val Loss: 0.067072, Val Acc: 98.18% | 1.5s
+[Epoch 12] LR: 0.001000 | Train Loss: 0.027685, Train Acc: 99.04% | Val Loss: 0.065332, Val Acc: 98.12% | 1.6s
+[Epoch 13] LR: 0.001000 | Train Loss: 0.027646, Train Acc: 99.09% | Val Loss: 0.061555, Val Acc: 98.23% | 1.5s
+[Epoch 14] LR: 0.001000 | Train Loss: 0.025424, Train Acc: 99.10% | Val Loss: 0.057727, Val Acc: 98.35% | 1.4s
+[Epoch 15] LR: 0.001000 | Train Loss: 0.022428, Train Acc: 99.27% | Val Loss: 0.065035, Val Acc: 98.20% | 1.5s
+[Epoch 16] LR: 0.001000 | Train Loss: 0.022888, Train Acc: 99.22% | Val Loss: 0.065726, Val Acc: 98.13% | 1.5s
+[Epoch 17] LR: 0.001000 | Train Loss: 0.023226, Train Acc: 99.24% | Val Loss: 0.063648, Val Acc: 98.27% | 1.5s
+[Epoch 18] LR: 0.001000 | Train Loss: 0.019856, Train Acc: 99.31% | Val Loss: 0.063681, Val Acc: 98.28% | 1.5s
+[Epoch 19] LR: 0.001000 | Train Loss: 0.019870, Train Acc: 99.33% | Val Loss: 0.060479, Val Acc: 98.47% | 1.5s
+[Epoch 20] LR: 0.001000 | Train Loss: 0.018307, Train Acc: 99.40% | Val Loss: 0.061400, Val Acc: 98.35% | 1.4s
+## Test Loss: 0.063795, Test Acc: 98.23% (total 30.0s)
+Log saved to /home/tomto/projects/Basic_deeplearning/Assignment_2/results/logs/optimizers/rmsprop_s42.json

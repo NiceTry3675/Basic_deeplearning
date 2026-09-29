@@ -1,7 +1,8 @@
 .venv
 __pycache__
-Assignment_2/code/mnist.npz
 Assignment_2/results/models/
 Assignment_2/results/review_findings.md
-Assignment_2/*.zip
 *.pdf
+*.npz
+*.pth
+*.zip

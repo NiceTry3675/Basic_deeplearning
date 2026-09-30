@@ -1,0 +1,2 @@
+Input: 28x28, Model: ../results/models/cnn_28_seed0.pth
+Single Sample Inference [idx=247] -> Pred: 4 (conf 68.95%), True: 4

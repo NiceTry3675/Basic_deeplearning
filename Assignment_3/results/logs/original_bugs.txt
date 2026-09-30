@@ -1,0 +1,4 @@
+[1] original argparse: --use_small False -> True
+[2] model_no_samll_input, batch 64: output (32, 10)
+[2] model_no_samll_input, batch 63: ERROR RuntimeError shape '[-1, 3136]' is invalid for input of size 98784
+[3] original model_v3 with 784 input, batch 64: output (1024, 10) (no error: each image split into 16 7x7 patches)

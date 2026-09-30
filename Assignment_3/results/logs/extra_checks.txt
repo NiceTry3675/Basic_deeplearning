@@ -1,0 +1,45 @@
+
+===== argparse type=bool =====
+type=bool, --flag "False" -> True
+type=bool, --flag "0" -> True
+type=bool, --flag "" -> False
+BooleanOptionalAction: [] -> False | --use_small -> True | --no-use_small -> False
+
+===== standardization / remaining stroke pixels =====
+train mean/std = 33.32 / 78.57
+test  mean/std = 33.79 / 79.17
+train[:54000] mean/std = 33.33 / 78.59
+non-zero pixels per image (28x28): 149.9 / 784
+non-zero pixels per image (7x7 stride): 9.3 / 49
+non-zero pixels per image (7x7 avg): 18.5 / 49
+
+===== parameters / buffers / thop =====
+parameter tensors: 14 | state_dict keys: 23
+buffers: ['bn1.running_mean', 'bn1.running_var', 'bn1.num_batches_tracked', 'bn2.running_mean', 'bn2.running_var', 'bn2.num_batches_tracked', 'bn_fc1.running_mean', 'bn_fc1.running_var', 'bn_fc1.num_batches_tracked']
+buffer elements: 707
+28x28: thop=4,795,392  conv+fc=4,643,840  diff=151,552  4*BN elements=151,552
+7x7: thop=208,544  conv+fc=198,944  diff=9,600  4*BN elements=9,600
+
+===== train/eval mode =====
+train mode, batch 1 -> ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 256])
+eval mode, batch 1 -> (1, 10)
+train mode + no_grad changes bn1.running_mean: True
+
+===== state_dict =====
+load 28x28 weights into CNN(7) -> size mismatch for fc1.weight: copying a param with shape torch.Size([256, 3136]) from checkpoint, the shape in current model is torch.Size([256, 64]).
+
+===== confidence of wrong predictions (28x28, seed 0) =====
+wrong=95, wrong with confidence >= 90%: 15
+
+===== epoch-1 train accuracy decomposition (seed 0) =====
+28x28: running(train, during epoch)=95.07  re-eval train set(eval mode)=98.18  re-eval train set(train mode)=97.99  val(eval mode)=98.03
+7x7 stride: running(train, during epoch)=71.79  re-eval train set(eval mode)=80.58  re-eval train set(train mode)=80.01  val(eval mode)=81.07
+
+===== training step time (CUDA events) =====
+batch   64, 28x28: 1.63 ms/step
+batch   64, 7x7: 1.81 ms/step
+batch 1024, 28x28: 10.39 ms/step
+batch 1024, 7x7: 1.87 ms/step
+one epoch of data loading + transfer only (28x28, batch 64): 0.37 s
+
+perf_counter monotonic: True | time.time adjustable: True

@@ -1,0 +1,14 @@
+Input: 28x28 (in_dim=784), train=54000, val=6000
+[Epoch  1] Train Loss: 0.231131, Train Acc: 95.13%, Val Loss: 0.086933, Val Acc: 97.87%
+[Epoch  2] Train Loss: 0.082763, Train Acc: 98.01%, Val Loss: 0.059970, Val Acc: 98.40%
+[Epoch  3] Train Loss: 0.059486, Train Acc: 98.53%, Val Loss: 0.054925, Val Acc: 98.20%
+[Epoch  4] Train Loss: 0.049212, Train Acc: 98.78%, Val Loss: 0.048433, Val Acc: 98.52%
+[Epoch  5] Train Loss: 0.041639, Train Acc: 98.96%, Val Loss: 0.039948, Val Acc: 98.73%
+[Epoch  6] Train Loss: 0.035695, Train Acc: 99.10%, Val Loss: 0.036972, Val Acc: 98.87%
+[Epoch  7] Train Loss: 0.031401, Train Acc: 99.23%, Val Loss: 0.035982, Val Acc: 98.87%
+[Epoch  8] Train Loss: 0.027222, Train Acc: 99.36%, Val Loss: 0.032040, Val Acc: 98.98%
+[Epoch  9] Train Loss: 0.025137, Train Acc: 99.43%, Val Loss: 0.033069, Val Acc: 98.98%
+[Epoch 10] Train Loss: 0.022287, Train Acc: 99.50%, Val Loss: 0.031665, Val Acc: 98.93%
+Training time: 22.6s
+Model saved to ../results/models/cnn_28_seed1.pth
+Log saved to ../results/logs/train_cnn_28_seed1.json

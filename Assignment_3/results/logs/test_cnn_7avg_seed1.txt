@@ -1,0 +1,3 @@
+Input: 7x7, Model: ../results/models/cnn_7avg_seed1.pth
+Test Accuracy: 96.60% (9660/10000, wrong=340)
+Per-class Accuracy: 0:98.57, 1:99.21, 2:97.58, 3:95.05, 4:95.21, 5:96.41, 6:97.49, 7:94.65, 8:96.10, 9:95.44

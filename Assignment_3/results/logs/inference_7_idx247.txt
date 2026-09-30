@@ -1,0 +1,2 @@
+Input: 7x7, Model: ../results/models/cnn_7_seed0.pth
+Single Sample Inference [idx=247] -> Pred: 2 (conf 68.33%), True: 4

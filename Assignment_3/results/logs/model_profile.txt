@@ -1,0 +1,26 @@
+===== in_size = 28×28 =====
+  conv1   :       320
+  bn1     :        64
+  conv2   :    18,496
+  bn2     :       128
+  fc1     :   803,072
+  bn_fc1  :       512
+  fc2     :     2,570
+Number of trainable parameters: 825,162
+MACs: 4.795 M (per sample), Params: 0.82516 M
+Input shape:  torch.Size([64, 784])
+Output shape: torch.Size([64, 10])
+
+===== in_size = 7×7 =====
+  conv1   :       320
+  bn1     :        64
+  conv2   :    18,496
+  bn2     :       128
+  fc1     :    16,640
+  bn_fc1  :       512
+  fc2     :     2,570
+Number of trainable parameters: 38,730
+MACs: 0.209 M (per sample), Params: 0.03873 M
+Input shape:  torch.Size([64, 49])
+Output shape: torch.Size([64, 10])
+

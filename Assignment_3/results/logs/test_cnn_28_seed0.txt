@@ -1,0 +1,3 @@
+Input: 28x28, Model: ../results/models/cnn_28_seed0.pth
+Test Accuracy: 99.05% (9905/10000, wrong=95)
+Per-class Accuracy: 0:99.80, 1:99.65, 2:99.13, 3:99.41, 4:99.29, 5:99.22, 6:98.23, 7:98.54, 8:99.28, 9:97.92

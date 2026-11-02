@@ -19,14 +19,14 @@ from xml.sax.saxutils import escape
 import pypandoc
 
 HERE    = os.path.dirname(os.path.abspath(__file__))
-SRC     = os.path.join(HERE, "202258096_임준현_딥러닝기초_과제3보고서.md")
+SRC     = os.path.join(HERE, "202258096_임준현_딥러닝응용_과제1보고서.md")
 OUT     = SRC.replace(".md", ".docx")
 MARKER  = "<!-- 본문 시작"
 FONT_KO = "Malgun Gothic"
 
 COVER = {
-    "course":   "딥러닝기초",
-    "title":    "과제 3 보고서",
+    "course":   "딥러닝응용",
+    "title":    "과제 1 보고서",
     "subtitle": "MNIST 원본 크기(28×28) 입력을 사용한\nCNN 학습·성능평가·추론",
     "info":     [("학번", "202258096"), ("이름", "임준현"), ("제출일", "2026년 9월 29일")],
 }

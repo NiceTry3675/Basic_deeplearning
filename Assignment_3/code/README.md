@@ -1,4 +1,4 @@
-# 딥러닝기초 과제 3 — MNIST 원본 크기(28×28) CNN 학습·평가·추론
+# 딥러닝응용 과제 1 — MNIST 원본 크기(28×28) CNN 학습·평가·추론
 
 강의자료 `pr_week_04_torch_mnist_cnn`의 `train.py`, `test.py`, `inference.py`, `model_v3.py`를
 MNIST 원본 크기(28×28) 입력으로 동작하도록 수정한 코드입니다.

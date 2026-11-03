@@ -1,0 +1,9 @@
+[model] c3_16 M R24 M R32 c1_64 G L10 params=29,258 MACs=2,976,714 ok=True K=6
+ep   1 loss 1.5197 val 94.540 val_ema 96.283 (max 96.48) (11s)
+ep  10 loss 0.5338 val 99.007 val_ema 99.450 (max 99.54) (43s)
+ep  20 loss 0.5231 val 99.133 val_ema 99.553 (max 99.58) (75s)
+ep  30 loss 0.5172 val 99.260 val_ema 99.593 (max 99.64) (108s)
+ep  40 loss 0.5095 val 99.373 val_ema 99.637 (max 99.70) (141s)
+ep  50 loss 0.5026 val 99.590 val_ema 99.593 (max 99.66) (174s)
+ep  60 loss 0.5020 val 99.607 val_ema 99.610 (max 99.66) (207s)
+DONE scr1_res_a time=207s {"val_ema": [99.55999755859375, 99.55999755859375, 99.5999984741211, 99.6199951171875, 99.65999603271484, 99.65999603271484], "test_ema": null}

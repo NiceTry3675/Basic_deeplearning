@@ -1,0 +1,9 @@
+[model] c3_16 c3_16 M R24 M R32 G L10 params=29,098 MACs=4,716,874 ok=True K=6
+ep   1 loss 1.3859 test 96.717 test_ema 97.237 (max 97.36) (16s)
+ep  10 loss 0.5343 test 99.207 test_ema 99.517 (max 99.56) (56s)
+ep  20 loss 0.5251 test 99.395 test_ema 99.532 (max 99.60) (99s)
+ep  30 loss 0.5192 test 99.443 test_ema 99.587 (max 99.66) (145s)
+ep  40 loss 0.5124 test 99.503 test_ema 99.592 (max 99.67) (188s)
+ep  50 loss 0.5048 test 99.510 test_ema 99.533 (max 99.60) (233s)
+ep  60 loss 0.5032 test 99.512 test_ema 99.518 (max 99.56) (276s)
+DONE fin_base_res_c_j1 time=276s {"val_ema": null, "test_ema": [99.50999450683594, 99.55999755859375, 99.50999450683594, 99.50999450683594, 99.49999237060547, 99.5199966430664]}

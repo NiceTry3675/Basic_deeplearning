@@ -1,0 +1,76 @@
+# ---- 1차 구조 스크리닝 (dev split, seed 6개) - vgg/res
+scr1_vgg_a train_packed.py --model vgg_a --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_vgg_g train_packed.py --model vgg_g --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_res_c train_packed.py --model res_c --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_res_b train_packed.py --model res_b --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_vgg_f train_packed.py --model vgg_f --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_vgg_o train_packed.py --model vgg_o --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_res_a train_packed.py --model res_a --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_res_d train_packed.py --model res_d --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+# ---- teachers (dev)
+t_res_dev_clean_s0 train.py --model t_res --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --seed 0
+t_wide_dev_clean_s0 train.py --model t_wide --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --seed 0
+# ---- KD sweep (res_c, dev teachers)
+kd_c2_a0.9_T4 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_clean_s0.pt,../results/teachers/t_wide_dev_clean_s0.pt --kd-alpha 0.9 --kd-T 4
+kd_c2_a0.5_T4 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_clean_s0.pt,../results/teachers/t_wide_dev_clean_s0.pt --kd-alpha 0.5 --kd-T 4
+# ---- OOF teachers (dev, t_res, 5-fold, clean)
+t_res_dev_oof5_f0 train.py --model t_res --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 0 --seed 0
+t_res_dev_oof5_f1 train.py --model t_res --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 1 --seed 1
+t_res_dev_oof5_f2 train.py --model t_res --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 2 --seed 2
+t_res_dev_oof5_f3 train.py --model t_res --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 3 --seed 3
+t_res_dev_oof5_f4 train.py --model t_res --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 4 --seed 4
+# ---- clean KD with OOF teacher
+kd_oof_a0.9_T4 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 4
+kd_oof_a0.5_T4 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.5 --kd-T 4
+kd_oof_a0.9_T2 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2
+kd_oof_a0.5_T1 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.5 --kd-T 1
+# ---- clean OOF KD 2차 (T 낮게)
+kd_oof_a0.9_T2_rep train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 100
+kd_oof_a0.9_T1 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 1
+kd_oof_a1.0_T2 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 1.0 --kd-T 2
+kd_oof_a0.9_T3 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 3
+# ---- OOF teachers 2 (dev, t_wide, 5-fold, clean)
+t_wide_dev_oof5_f0 train.py --model t_wide --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 0 --seed 10
+t_wide_dev_oof5_f1 train.py --model t_wide --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 1 --seed 11
+t_wide_dev_oof5_f2 train.py --model t_wide --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 2 --seed 12
+t_wide_dev_oof5_f3 train.py --model t_wide --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 3 --seed 13
+t_wide_dev_oof5_f4 train.py --model t_wide --split dev --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 4 --seed 14
+# ---- clean OOF KD 3차 (teacher 세트 조합)
+kd_oofW_a0.9_T2 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_wide_dev_oof5.pt --kd-alpha 0.9 --kd-T 2
+kd_oofRW_a0.9_T2 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt,../results/teachers/t_wide_dev_oof5.pt --kd-alpha 0.9 --kd-T 2
+# ---- 대조실험: in-sample clean teacher(t_res) T=2 → OOF 효과 분리
+kd_cR_a0.9_T2 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_clean_s0.pt --kd-alpha 0.9 --kd-T 2
+# ---- 가중치 공유 구조 스크리닝
+scr1_sh_a train_packed.py --model sh_a --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_sh_a3 train_packed.py --model sh_a3 --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_sh_b train_packed.py --model sh_b --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_sh_c train_packed.py --model sh_c --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_sh_c2 train_packed.py --model sh_c2 --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+# ---- teachers (full 60k) : clean OOF
+t_res_full_oof5_f0 train.py --model t_res --split full --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 0 --seed 0
+t_res_full_oof5_f1 train.py --model t_res --split full --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 1 --seed 1
+t_res_full_oof5_f2 train.py --model t_res --split full --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 2 --seed 2
+t_res_full_oof5_f3 train.py --model t_res --split full --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 3 --seed 3
+t_res_full_oof5_f4 train.py --model t_res --split full --epochs 40 --amp --opt sgd --lr 0.1 --wd 5e-4 --ls 0 --ema 0.999 --save-logits --nfolds 5 --fold 4 --seed 4
+t_res_full_oof5 combine_oof.py --parts t_res_full_oof5_f0,t_res_full_oof5_f1,t_res_full_oof5_f2,t_res_full_oof5_f3,t_res_full_oof5_f4
+# ---- FINAL (full 60k, test는 기록만; 트랙A=사전고정 j0_s0, 트랙B=최고 seed)
+fin_oof_res_c_j0 train_packed.py --model res_c --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 0
+fin_oof_res_c_j1 train_packed.py --model res_c --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 1000
+fin_oof_res_c_j2 train_packed.py --model res_c --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 2000
+fin_oof_res_c_j3 train_packed.py --model res_c --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 3000
+fin_base_res_c_j0 train_packed.py --model res_c --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0.1 --seed 3
+fin_base_res_c_j1 train_packed.py --model res_c --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0.1 --seed 1003
+# ---- HP sweep on res_c + OOF KD(a0.9,T2)  (기준: kd_oof_a0.9_T2 99.673)
+hpk_sam0.05 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.1 --wd 5e-4 --bs 128 --sam 0.05
+hpk_sam0.15 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.1 --wd 5e-4 --bs 128 --sam 0.15
+hpk_ep120 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 120 --lr 0.1 --wd 5e-4 --bs 128 
+hpk_ep30 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 30 --lr 0.1 --wd 5e-4 --bs 128 
+hpk_lr0.05 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.05 --wd 5e-4 --bs 128 
+hpk_lr0.2 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.2 --wd 5e-4 --bs 128 
+hpk_wd1e-4 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.1 --wd 1e-4 --bs 128 
+hpk_wd1e-3 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.1 --wd 1e-3 --bs 128 
+hpk_bs64 train_packed.py --model res_c --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.05 --wd 5e-4 --bs 64 
+hpk_drop0.2 train_packed.py --model res_c_d2 --split dev --opt sgd --K 6 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --ls 0 --epochs 60 --lr 0.1 --wd 5e-4 --bs 128 
+# ---- 1차 스크리닝 나머지 (depthwise 계열, 느림)
+scr1_ds_a train_packed.py --model ds_a --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999
+scr1_ds_h train_packed.py --model ds_h --K 6 --split dev --epochs 60 --opt sgd --lr 0.1 --wd 5e-4 --ls 0.1 --ema 0.999

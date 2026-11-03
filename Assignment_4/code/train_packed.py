@@ -191,6 +191,24 @@ ckdir = os.path.join(ROOT, "results", "ckpt")
 os.makedirs(outdir, exist_ok=True)
 os.makedirs(ckdir, exist_ok=True)
 final = ema.ema if ema else model
+
+# EMA 가중치에 맞춰 BN running stats를 학습 데이터로 다시 추정한 버전도 평가 (기록용 비교)
+bnrc = None
+if ema:
+    import copy as _copy
+    bnrc = _copy.deepcopy(ema.ema)
+    bnrc.eval()
+    for m_ in bnrc.modules():
+        if isinstance(m_, torch.nn.BatchNorm2d):
+            m_.reset_running_stats(); m_.momentum = None; m_.train()  # 누적 평균, dropout은 eval 유지
+    with torch.no_grad():
+        for i in range(0, N, 500):
+            bnrc(x_tr[i:i + 500].unsqueeze(1))
+    bn_val = acc_per_model(bnrc, D["x_val"], D["y_val"]) if D["x_val"] is not None else None
+    bn_test = acc_per_model(bnrc, D["x_te"], D["y_te"]) if hist["test_ema"] else None
+    if bn_val:
+        print(f"[BN recalc] val_ema {sum(hist['val_ema'][-1]) / K:.3f} -> {sum(bn_val) / K:.3f}", flush=True)
+
 for k in range(K):
     sub = lambda key: [h[k] for h in hist[key]]
     r = dict(name=f"{args.name}_s{k}", args=vars(args), spec=spec, complexity=cx, time=el / K,
@@ -202,6 +220,11 @@ for k in range(K):
     if hist["test"] and (args.split == "full" or args.test_every_epoch):
         r["final_test"] = hist["test"][-1][k]
         r["final_test_ema"] = hist["test_ema"][-1][k] if ema else None
+    if bnrc is not None:
+        if D["x_val"] is not None:
+            r["final_val_ema_bnrc"] = bn_val[k]
+        if bn_test is not None:
+            r["final_test_ema_bnrc"] = bn_test[k]
     with open(os.path.join(outdir, f"{args.name}_s{k}.json"), "w") as f:
         json.dump(r, f)
     if args.split == "full" or args.save_dev_ckpt:

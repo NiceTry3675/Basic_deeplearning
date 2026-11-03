@@ -1,0 +1,1 @@
+{"name": "t_res_dev_oof5b", "parts": ["t_res_dev_oof5b_f0", "t_res_dev_oof5b_f1", "t_res_dev_oof5b_f2", "t_res_dev_oof5b_f3", "t_res_dev_oof5b_f4"], "oof_coverage": 55000, "oof_acc": 99.60908508300781, "val_acc_foldavg": 99.69999694824219}

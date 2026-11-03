@@ -13,6 +13,7 @@
   I{e}_{C}     : Inverted residual (1x1 expand×e → dw3x3 → 1x1 project, 같은 shape이면 skip)
   SE{r}        : Squeeze-Excitation (축소비 r)
   G            : Global Average Pooling (+flatten)
+  P{n}         : n×n Adaptive Average Pooling (+flatten) — 공간 정보를 남기는 head (분류층 입력 C·n·n)
   F            : Flatten
   D{p}         : Dropout p
   L{n}         : Linear n (마지막 분류기)
@@ -129,6 +130,9 @@ class TokenNet(nn.Module):
                 layers.append(SE(c, int(tok[2:])))
             elif tok == "G":
                 layers += [nn.AdaptiveAvgPool2d(1), nn.Flatten()]; flat = c
+            elif tok.startswith("P"):
+                n = int(tok[1:])
+                layers += [nn.AdaptiveAvgPool2d(n), nn.Flatten()]; c = c * n * n; flat = c
             elif tok == "F":
                 layers.append(nn.Flatten()); flat = "auto"
             elif tok.startswith("D"):
@@ -170,6 +174,17 @@ STUDENTS = {
     "ds_c": "c3_16 ds3_32 M ds3_64 ds3_64 M ds3_96 ds3_96 G L10",
     "ds_h": "c3_16 c3_24 M ds3_48 ds3_64 ds3_64 M ds3_80 ds3_80 G L10",
     "ds_i": "c3_24 c3_24 M ds3_48 ds3_64 M ds3_96 ds3_96 G L10",
+    "ds_k": "c3_16 ds3_32 M ds3_48 ds3_64 M ds3_104 ds3_104 G L10",
+    "ds_n": "c3_16 ds5_32 M ds5_48 ds5_64 M ds5_96 ds5_96 G L10",
+    "ds_o": "c3_16 ds3_32 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 G L10",
+    # --- 2×2 공간 head (GAP 대신 P2)
+    "ds_a_p2": "c3_16 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 P2 L10",
+    "ds_c_p2": "c3_16 ds3_32 M ds3_64 ds3_64 M ds3_96 ds3_96 P2 L10",
+    "res_c30_p2": "c3_16 c3_16 M R24 M R30 P2 L10",
+    # --- 예산 내 2-모델 앙상블 멤버 후보 (~15K, 두 개 합쳐 30K 이하)
+    "e_res": "c3_12 c3_12 M R16 M R24 G L10",
+    "e_ds2": "c3_16 ds3_24 M ds3_40 ds3_48 M ds3_64 ds3_72 G L10",
+    "e_vgg": "c5_12 M c3_20 c3_24 M c3_32 G L10",
     # --- 가중치 공유 residual 계열 (파라미터는 그대로, 남는 MACs로 깊이 확보)
     "sh_a": "c3_16 M c3_24 RS24x3 M c3_48 G L10",
     "sh_a3": "c3_16 M c3_24 RS24x3 M c3_48 c1_64 G L10",

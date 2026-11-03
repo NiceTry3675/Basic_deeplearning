@@ -45,6 +45,7 @@ p.add_argument("--save-logits", action="store_true", help="학습 60k 전체에 
 p.add_argument("--test-every-epoch", action="store_true", help="[트랙B 분석용] 매 epoch test acc 기록")
 p.add_argument("--nfolds", type=int, default=0, help="OOF teacher: 학습셋을 nfolds로 나눔")
 p.add_argument("--fold", type=int, default=0, help="OOF teacher: 이 fold를 빼고 학습 → 이 fold를 예측")
+p.add_argument("--fold-seed", type=int, default=777, help="OOF fold 분할 시드 (다른 분할의 OOF 세트를 만들 때)")
 p.add_argument("--name", required=True)
 p.add_argument("--outdir", default=os.path.join(ROOT, "results", "runs"))
 args = p.parse_args()
@@ -60,7 +61,7 @@ D = load_mnist(dev, args.split)
 heldout_idx = None
 if args.nfolds > 0:
     # 현재 학습셋(dev: 55k / full: 60k)을 고정 시드로 nfolds 분할, fold번째를 제외하고 학습
-    g = torch.Generator().manual_seed(777)
+    g = torch.Generator().manual_seed(args.fold_seed)
     perm = torch.randperm(len(D["x_tr"]), generator=g).to(dev)
     folds = perm.chunk(args.nfolds)
     keep = torch.cat([f for i, f in enumerate(folds) if i != args.fold])

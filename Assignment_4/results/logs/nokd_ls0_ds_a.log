@@ -1,0 +1,10 @@
+[model] c3_16 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 G L10 params=25,114 MACs=3,000,554 ok=True K=6
+ep   1 loss 1.4834 val 94.170 val_ema 94.167 (max 94.92) (19s)
+ep  10 loss 0.0365 val 98.660 val_ema 99.277 (max 99.34) (99s)
+ep  20 loss 0.0272 val 98.887 val_ema 99.403 (max 99.50) (188s)
+ep  30 loss 0.0206 val 99.183 val_ema 99.497 (max 99.60) (274s)
+ep  40 loss 0.0097 val 99.320 val_ema 99.567 (max 99.60) (359s)
+ep  50 loss 0.0012 val 99.600 val_ema 99.627 (max 99.70) (442s)
+ep  60 loss 0.0008 val 99.617 val_ema 99.623 (max 99.68) (527s)
+[BN recalc] val_ema 99.623 -> 99.627
+DONE nokd_ls0_ds_a time=527s {"val_ema": [99.63999938964844, 99.67999267578125, 99.67999267578125, 99.55999755859375, 99.63999938964844, 99.53999328613281], "test_ema": null}

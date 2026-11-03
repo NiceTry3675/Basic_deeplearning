@@ -80,7 +80,7 @@ class PackedTokenNet(nn.Module):
     def __init__(self, spec, K, act="relu"):
         super().__init__()
         self.spec, self.K, self.act = spec, K, act
-        layers, c = [], 1
+        layers, c, ps = [], 1, 1  # ps: 분류 직전 pooling 크기 (G=1, P{n}=n)
         for tok in spec.split():
             if tok.startswith("c") and "_" in tok:
                 k, cout = map(int, tok[1:].split("_"))
@@ -108,10 +108,13 @@ class PackedTokenNet(nn.Module):
                 layers.append(PSE(K, c, int(tok[2:])))
             elif tok == "G":
                 layers += [nn.AdaptiveAvgPool2d(1), nn.Identity()]  # TokenNet: [AvgPool, Flatten]
+            elif tok.startswith("P"):
+                ps = int(tok[1:]); layers += [nn.AdaptiveAvgPool2d(ps), nn.Identity()]  # TokenNet: [Pool, Flatten]
             elif tok.startswith("D"):
                 layers.append(nn.Dropout(float(tok[1:])))
             elif tok.startswith("L"):
-                n = int(tok[1:]); layers.append(nn.Conv2d(K * c, K * n, 1, groups=K)); c = n
+                # n×n 특징을 펼쳐 Linear에 넣는 것 = kernel n인 grouped conv (extract 시 reshape로 1:1 대응)
+                n = int(tok[1:]); layers.append(nn.Conv2d(K * c, K * n, ps, groups=K)); c = n
             else:
                 raise ValueError(f"packed: unsupported token {tok}")
         self.net = nn.Sequential(*layers)
@@ -144,7 +147,8 @@ if __name__ == "__main__":
     # 동작 검증: packed 출력 == 추출한 단일 모델 출력
     from models import STUDENTS
     torch.manual_seed(0)
-    for name in ["vgg_a", "res_a", "ds_a", "mb_b", "c3_16 SE4 M c3_32 M c1_32 G D0.1 L10", "c3_16 M c3_24 RS24x3 M c3_32 G L10"]:
+    for name in ["vgg_a", "res_a", "ds_a", "mb_b", "c3_16 SE4 M c3_32 M c1_32 G D0.1 L10", "c3_16 M c3_24 RS24x3 M c3_32 G L10",
+                 "c3_16 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 P2 L10", "c3_8 M c3_16 M c3_16 P3 D0.1 L10"]:
         spec = STUDENTS.get(name, name)
         pm = PackedTokenNet(spec, K=4).eval()
         # BN running stats 랜덤화

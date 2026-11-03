@@ -1,0 +1,12 @@
+[model] c5_96 c3_96 M c3_192 c3_192 M c3_384 c3_384 G D0.4 L10  params=2,580,202  MACs(thop)=263070720  MACs(ptflops)=263314954  ok=False
+ep   1 loss 0.4800 val 96.76 val_ema 98.86  (12s)
+ep   5 loss 0.0324 val 98.62 val_ema 99.62  (29s)
+ep  10 loss 0.0233 val 98.92 val_ema 99.62  (52s)
+ep  15 loss 0.0175 val 98.20 val_ema 99.60  (73s)
+ep  20 loss 0.0126 val 99.24 val_ema 99.62  (95s)
+ep  25 loss 0.0059 val 99.36 val_ema 99.60  (118s)
+ep  30 loss 0.0009 val 99.54 val_ema 99.56  (139s)
+ep  35 loss 0.0004 val 99.54 val_ema 99.56  (161s)
+ep  40 loss 0.0004 val 99.58 val_ema 99.56  (182s)
+[logits] saved; teacher acc on full-train = 99.963
+DONE t_wide_dev_clean_s0 {"final_val": 99.57999587059021, "final_val_ema": 99.55999851226807, "final_test": null, "final_test_ema": null} time=182s

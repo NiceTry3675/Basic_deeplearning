@@ -1,0 +1,9 @@
+[model] c3_16 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 G L10 params=25,114 MACs=3,000,554 ok=True K=6
+ep   1 loss 1.6950 val 94.893 val_ema 93.377 (max 94.26) (19s)
+ep  10 loss 0.5394 val 99.110 val_ema 99.427 (max 99.52) (90s)
+ep  20 loss 0.5273 val 99.270 val_ema 99.533 (max 99.64) (171s)
+ep  30 loss 0.5211 val 99.367 val_ema 99.550 (max 99.58) (252s)
+ep  40 loss 0.5136 val 99.430 val_ema 99.630 (max 99.70) (333s)
+ep  50 loss 0.5053 val 99.623 val_ema 99.640 (max 99.70) (414s)
+ep  60 loss 0.5036 val 99.630 val_ema 99.650 (max 99.74) (498s)
+DONE scr1_ds_a time=498s {"val_ema": [99.73999786376953, 99.5999984741211, 99.67999267578125, 99.63999938964844, 99.57999420166016, 99.65999603271484], "test_ema": null}

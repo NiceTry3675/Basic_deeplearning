@@ -6,3 +6,6 @@ Assignment_2/results/review_findings.md
 *.npz
 *.pth
 *.zip
+Assignment_4/results/ckpt/
+Assignment_4/results/teachers/
+Assignment_4/results/logits/

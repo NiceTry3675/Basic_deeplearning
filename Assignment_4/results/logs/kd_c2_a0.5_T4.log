@@ -1,0 +1,10 @@
+[KD] teachers=2 T=4.0 a=0.5 teacher-train-acc=100.000
+[model] c3_16 c3_16 M R24 M R32 G L10 params=29,098 MACs=4,716,874 ok=True K=6
+ep   1 loss 5.1351 val 96.793 val_ema 98.683 (max 98.78) (13s)
+ep  10 loss 0.1318 val 99.393 val_ema 99.553 (max 99.62) (49s)
+ep  20 loss 0.0999 val 99.467 val_ema 99.610 (max 99.70) (91s)
+ep  30 loss 0.0786 val 99.503 val_ema 99.590 (max 99.64) (132s)
+ep  40 loss 0.0551 val 99.613 val_ema 99.603 (max 99.64) (171s)
+ep  50 loss 0.0365 val 99.587 val_ema 99.613 (max 99.66) (212s)
+ep  60 loss 0.0284 val 99.603 val_ema 99.607 (max 99.66) (253s)
+DONE kd_c2_a0.5_T4 time=253s {"val_ema": [99.6199951171875, 99.6199951171875, 99.53999328613281, 99.57999420166016, 99.6199951171875, 99.65999603271484], "test_ema": null}

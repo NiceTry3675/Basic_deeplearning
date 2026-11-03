@@ -1,0 +1,13 @@
+[OOF] fold 0/5: train 44000, held-out 11000
+[model] c5_96 c3_96 M c3_192 c3_192 M c3_384 c3_384 G D0.4 L10  params=2,580,202  MACs(thop)=263070720  MACs(ptflops)=263314954  ok=False
+ep   1 loss 0.5397 val 97.82 val_ema 98.78  (10s)
+ep   5 loss 0.0371 val 98.50 val_ema 99.48  (26s)
+ep  10 loss 0.0239 val 98.86 val_ema 99.58  (43s)
+ep  15 loss 0.0167 val 99.24 val_ema 99.64  (62s)
+ep  20 loss 0.0100 val 97.80 val_ema 99.64  (79s)
+ep  25 loss 0.0053 val 99.42 val_ema 99.60  (99s)
+ep  30 loss 0.0006 val 99.64 val_ema 99.60  (116s)
+ep  35 loss 0.0004 val 99.68 val_ema 99.66  (134s)
+ep  40 loss 0.0003 val 99.68 val_ema 99.66  (153s)
+[logits] saved; teacher acc on full-train = 99.917
+DONE t_wide_dev_oof5_f0 {"final_val": 99.67999458312988, "final_val_ema": 99.65999722480774, "final_test": null, "final_test_ema": null} time=153s

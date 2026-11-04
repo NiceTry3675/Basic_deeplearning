@@ -1,0 +1,11 @@
+[KD] teachers=1 T=2.0 a=0.9 teacher-train-acc=99.582
+[model] c3_16 c3_16 M R24 M R32 G L10 params=29,098 MACs=4,693,376 ok=True K=6
+ep   1 loss 3.3629 val 96.797 val_ema 98.357 (max 98.42) (15s)
+ep  10 loss 0.0564 val 99.310 val_ema 99.527 (max 99.56) (54s)
+ep  20 loss 0.0413 val 99.433 val_ema 99.583 (max 99.68) (99s)
+ep  30 loss 0.0328 val 99.433 val_ema 99.610 (max 99.68) (144s)
+ep  40 loss 0.0229 val 99.600 val_ema 99.657 (max 99.72) (186s)
+ep  50 loss 0.0140 val 99.637 val_ema 99.663 (max 99.70) (229s)
+ep  60 loss 0.0113 val 99.647 val_ema 99.657 (max 99.70) (271s)
+[BN recalc] val_ema 99.657 -> 99.657
+DONE kd_silu time=271s {"val_ema": [99.69999694824219, 99.6199951171875, 99.5999984741211, 99.67999267578125, 99.65999603271484, 99.67999267578125], "test_ema": null}

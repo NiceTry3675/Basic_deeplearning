@@ -97,3 +97,16 @@ kdo_e_ds2 train_packed.py --model e_ds2 --split dev --K 6 --opt sgd --epochs 60 
 nokd_ls0_ds_a train_packed.py --model ds_a --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0
 kdo_ds_c_p2 train_packed.py --model ds_c_p2 --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2
 kdo_e_vgg train_packed.py --model e_vgg --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2
+# ---- 선택적 KD(teacher 오답 샘플만 α 낮춤) + 활성화/정밀도  (기준: kd_oof_a0.9_T2 99.673)
+kd_sel_aw0.2 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --kd-alpha-wrong 0.2
+kd_sel_aw0.5 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --kd-alpha-wrong 0.5
+kd_silu train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act silu
+kd_gelu train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+kd_fp32 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --no-amp
+kd_sel_aw1.0 train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --kd-alpha-wrong 1.0
+kd_gelu_rep train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu --seed 100
+# ---- FINAL GELU (val 12 seeds 99.685 vs ReLU 99.673 로 선택; 트랙A=사전고정 j0_s0)
+fin_oof_res_c_gelu_j0 train_packed.py --model res_c --act gelu --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 11
+fin_oof_res_c_gelu_j1 train_packed.py --model res_c --act gelu --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 1011
+fin_oof_res_c_gelu_j2 train_packed.py --model res_c --act gelu --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 2011
+fin_oof_res_c_gelu_j3 train_packed.py --model res_c --act gelu --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 3011

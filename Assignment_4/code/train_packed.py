@@ -35,6 +35,8 @@ p.add_argument("--ls", type=float, default=0.0)
 p.add_argument("--ema", type=float, default=0.999)
 p.add_argument("--kd", default="")
 p.add_argument("--kd-alpha", type=float, default=0.9)
+p.add_argument("--kd-alpha-wrong", type=float, default=None,
+               help="선택적 KD: teacher 예측이 학습 정답과 다른 샘플에만 쓸 α (기본: --kd-alpha와 동일)")
 p.add_argument("--kd-T", type=float, default=4.0)
 p.add_argument("--kd-mode", default="logit_avg", choices=["logit_avg", "prob_avg"])
 p.add_argument("--sam", type=float, default=0.0, help="SAM rho (0: 끔)")
@@ -63,6 +65,10 @@ if args.kd:
     else:
         t_prob = torch.stack([F.softmax(z / args.kd_T, 1) for z in zs]).mean(0)
     t_prob = t_prob[D["idx_tr"]]
+    t_correct = t_prob.argmax(1) == y_tr  # teacher 예측 == 학습 정답 (학습 라벨만 사용)
+    if args.kd_alpha_wrong is not None:
+        print(f"[KD] 선택적 α: teacher 정답 {int(t_correct.sum())}개 α={args.kd_alpha}, "
+              f"teacher 오답 {int((~t_correct).sum())}개 α={args.kd_alpha_wrong}", flush=True)
     print(f"[KD] teachers={len(zs)} T={args.kd_T} a={args.kd_alpha} "
           f"teacher-train-acc={(t_prob.argmax(1) == y_tr).float().mean() * 100:.3f}", flush=True)
 
@@ -135,6 +141,13 @@ for ep in range(1, args.epochs + 1):
                 T = args.kd_T
                 logp = F.log_softmax(out / T, 2)
                 tp = t_prob[idx]  # (B,K,10)
+                if args.kd_alpha_wrong is not None:
+                    # 샘플별 α: 평균 내기 전에 CE/KL을 샘플 단위로 유지 → (B,K)
+                    ce_i = F.cross_entropy(out.reshape(-1, 10), yb.reshape(-1), label_smoothing=args.ls,
+                                           reduction="none").reshape(yb.shape)
+                    kl_i = (tp * (torch.log(tp.clamp_min(1e-12)) - logp)).sum(2) * T * T
+                    a = torch.where(t_correct[idx], args.kd_alpha, args.kd_alpha_wrong)
+                    return ((1 - a) * ce_i + a * kl_i).mean()
                 kl = (tp * (torch.log(tp.clamp_min(1e-12)) - logp)).sum(2).mean() * T * T
                 return (1 - args.kd_alpha) * ce + args.kd_alpha * kl
             return ce

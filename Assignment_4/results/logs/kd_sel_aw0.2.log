@@ -1,0 +1,12 @@
+[KD] 선택적 α: teacher 정답 54770개 α=0.9, teacher 오답 230개 α=0.2
+[KD] teachers=1 T=2.0 a=0.9 teacher-train-acc=99.582
+[model] c3_16 c3_16 M R24 M R32 G L10 params=29,098 MACs=4,716,874 ok=True K=6
+ep   1 loss 3.3778 val 95.207 val_ema 98.170 (max 98.34) (16s)
+ep  10 loss 0.0641 val 99.173 val_ema 99.510 (max 99.52) (54s)
+ep  20 loss 0.0485 val 99.363 val_ema 99.580 (max 99.64) (97s)
+ep  30 loss 0.0378 val 99.360 val_ema 99.613 (max 99.68) (140s)
+ep  40 loss 0.0248 val 99.583 val_ema 99.623 (max 99.68) (181s)
+ep  50 loss 0.0153 val 99.620 val_ema 99.617 (max 99.68) (222s)
+ep  60 loss 0.0124 val 99.640 val_ema 99.633 (max 99.70) (263s)
+[BN recalc] val_ema 99.633 -> 99.633
+DONE kd_sel_aw0.2 time=263s {"val_ema": [99.57999420166016, 99.6199951171875, 99.69999694824219, 99.63999938964844, 99.63999938964844, 99.6199951171875], "test_ema": null}

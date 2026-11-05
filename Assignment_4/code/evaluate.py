@@ -1,6 +1,6 @@
 """
 체크포인트 평가: 복잡도(thop/ptflops) + 테스트 정확도
-  python evaluate.py ../results/ckpt/<name>.pt [--raw]
+  python evaluate.py ../final_models/<name>.pt [--raw]     (CPU에서도 동작)
 """
 import argparse
 
@@ -15,6 +15,8 @@ p.add_argument("--raw", action="store_true", help="EMA 대신 raw 가중치 평�
 args = p.parse_args()
 
 dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+torch.backends.cudnn.allow_tf32 = False   # GPU에서도 순수 fp32 (CPU와 같은 결과)
+torch.backends.cuda.matmul.allow_tf32 = False
 D = load_mnist(dev, "full")
 for path in args.ckpts:
     ck = torch.load(path, map_location=dev)
@@ -23,5 +25,9 @@ for path in args.ckpts:
     cx = count_complexity(m)
     acc = accuracy(m, D["x_te"], D["y_te"])
     n_err = int(round((100 - acc) / 100 * len(D["y_te"])))
-    print(f"{path}\n  spec: {ck['spec']}\n  params={cx['max_params']:,}  MACs thop={cx['thop_macs']:,} "
-          f"ptflops={cx['ptflops_macs']:,}  within_limit={cx['ok']}\n  TEST ACC = {acc:.2f}%  ({n_err} errors / 10000)")
+    for tool in ("thop", "ptflops"):
+        if f"{tool}_err" in cx:
+            print(f"  [경고] {tool} 측정 실패: {cx[f'{tool}_err']}  (pip install -r requirements.txt)")
+    fmt = lambda v: f"{v:,}" if isinstance(v, int) else "측정 실패"
+    print(f"{path}\n  spec: {ck['spec']}\n  params={cx['max_params']:,}  MACs thop={fmt(cx.get('thop_macs'))} "
+          f"ptflops={fmt(cx.get('ptflops_macs'))}  within_limit={cx['ok']}\n  TEST ACC = {acc:.2f}%  ({n_err} errors / 10000)")

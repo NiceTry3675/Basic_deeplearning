@@ -32,6 +32,6 @@ for pat in pats:
           f"(median {np.median(te):.2f}, min {te.min():.2f}, max {te.max():.2f}) | raw 평균 {raw.mean():.3f}")
     print(f"           사전 고정 제출 모델: {first['name']} → test {first['final_test_ema']:.2f}%")
     print(f"  [트랙 B] 최고 seed: {best['name']} → test {best['final_test_ema']:.2f}%  "
-          f"ckpt: results/ckpt/{best['name']}.pt")
+          f"ckpt: results/ckpt/{best['name']}.pt (제출본은 final_models/)")
     vals, cnt = np.unique(np.round(te, 2), return_counts=True)
     print("  분포: " + "  ".join(f"{v:.2f}×{c}" for v, c in zip(vals, cnt)))

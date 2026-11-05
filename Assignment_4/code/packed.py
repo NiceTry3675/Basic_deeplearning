@@ -253,7 +253,7 @@ if __name__ == "__main__":
     from models import STUDENTS
     torch.manual_seed(0)
     for name in ["vgg_a", "res_a", "ds_a", "mb_b", "c3_16 SE4 M c3_32 M c1_32 G D0.1 L10", "c3_16 M c3_24 RS24x3 M c3_32 G L10",
-                 "c3_16 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 P2 L10", "c3_8 M c3_16 M c3_16 P3 D0.1 L10"]:
+                 "c3_16 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 P2 L10", "c3_8 M c3_16 M c3_16 P3 D0.1 L10", "res_c"]:
         spec = STUDENTS.get(name, name)
         pm = PackedTokenNet(spec, K=4).eval()
         # BN running stats 랜덤화

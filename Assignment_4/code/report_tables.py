@@ -99,7 +99,7 @@ table("T_at", ["AT 가중치", "seed", "검증 정확도 (%)", "대조군 대비
 rows = []
 for k in ["soup_b0", "soup_b8", "soup_b15", "soup_b15_rep", "soup_b15_m8", "soup_b30", "soup_b45"]:
     s = S["soup"][k]
-    rows.append([s["branch_ep"], f"{s['G']} × {s['M']}", f"{s['member']:.3f}", f"{s['soup']:.3f}", f"{s['gain']:+.3f} ± {s['gain_se']:.3f}",
+    rows.append([f"{s['branch_ep']}" + (" (재현)" if k.endswith("_rep") else ""), f"{s['G']} × {s['M']}", f"{s['member']:.3f}", f"{s['soup']:.3f}", f"{s['gain']:+.3f} ± {s['gain_se']:.3f}",
                  f"{s['ens']:.3f}"])
 p = S["soup"]["pooled_b8_b30"]
 table("T_soup", ["분기 epoch", "그룹 × 멤버", "멤버 평균 (%)", "soup (%)", "이득 (%p, ± 표준오차)", "출력 앙상블 (%, 참고)"], rows)

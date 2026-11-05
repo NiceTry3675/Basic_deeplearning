@@ -4,8 +4,8 @@
   fig_oof.png             5-fold OOF 지식 증류 개념도
   fig_val_curves.png      검증 정확도 학습 곡선 (OOF KD vs KD 없음, GELU)
   fig_final_test.png      최종 학습(60k) 레시피별 seed 분포와 트랙 A/B
-  fig_effects_kd.png      검증 실험 효과 크기 ① KD 설정·teacher·구조 (기준 대비 차이, 95% 신뢰구간)
-  fig_effects_train.png   검증 실험 효과 크기 ② 학습 설정·추가 기법
+  fig_effects_kd.png      검증 실험 효과 크기 ①~③ KD 설정·teacher·구조 (기준 대비 차이, 95% 신뢰구간)
+  fig_effects_train.png   검증 실험 효과 크기 ④~⑥ 학습 설정·활성화 함수·추가 기법
   fig_val_errors.png      검증 오답 구성 (몇 개 seed가 틀렸나 × teacher 앙상블 정오)
   fig_val_hard.png        12개 seed가 모두 틀린 검증 이미지 + 라벨 정제 예시(학습 이미지)
   fig_trackA_errors.png   트랙 A 모델의 테스트 오답 36개
@@ -302,7 +302,7 @@ def fig_effects():
             diff_row("Res-c(R30) + 2×2 head", "kdarch_res_c30_p2", A),
         ]),
     ]
-    forest(sec_kd, "fig_effects_kd.png", "검증 실험 효과 크기 ① — KD 설정 · teacher · 구조", (-0.16, 0.16))
+    forest(sec_kd, "fig_effects_kd.png", "검증 실험 효과 크기 ①~③ — KD 설정 · teacher · 구조", (-0.16, 0.16))
 
     G = "act_gelu"
     soup = S["soup"]
@@ -344,7 +344,7 @@ def fig_effects():
             at_row("attention transfer β1000**", "1000"),
         ]),
     ]
-    forest(sec_tr, "fig_effects_train.png", "검증 실험 효과 크기 ② — 학습 설정 · 추가 기법", (-0.16, 0.16))
+    forest(sec_tr, "fig_effects_train.png", "검증 실험 효과 크기 ④~⑥ — 학습 설정 · 활성화 함수 · 추가 기법", (-0.16, 0.16))
 
 
 # =============================================================== 7~8. 검증 오답 구성 / 어려운 샘플

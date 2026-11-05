@@ -168,6 +168,8 @@ STUDENTS = {
     "res_c": "c3_16 c3_16 M R24 M R32 G L10",
     "res_d": "c3_16 R16 M R32 M c3_32 G L10",
     "res_c_d2": "c3_16 c3_16 M R24 M R32 G D0.2 L10",
+    "res_c_lp": "c3_16 c3_16 M R24 R32 M G L10",  # 두 번째 MaxPool을 R32 뒤로 (R32가 14×14에서 동작)
+    "res_c_k5": "c5_16 c3_16 M R24 M R32 G L10",  # 첫 conv만 5×5
     "res_a_d2": "c3_16 M R24 M R32 c1_64 G D0.2 L10",
     # --- depthwise separable 계열 (같은 파라미터로 더 넓은 채널)
     "ds_a": "c3_16 ds3_32 M ds3_48 ds3_64 M ds3_96 ds3_96 G L10",

@@ -1,0 +1,10 @@
+[model] c3_16 c3_16 M R24 M R32 G L10 params=29,098 MACs=4,716,874 ok=True K=6
+ep   1 loss 1.1158 val 95.327 val_ema 97.193 (max 97.34) (14s)
+ep  10 loss 0.0289 val 98.953 val_ema 99.423 (max 99.56) (57s)
+ep  20 loss 0.0214 val 98.967 val_ema 99.507 (max 99.54) (100s)
+ep  30 loss 0.0142 val 99.207 val_ema 99.567 (max 99.62) (144s)
+ep  40 loss 0.0062 val 99.453 val_ema 99.610 (max 99.70) (186s)
+ep  50 loss 0.0008 val 99.580 val_ema 99.577 (max 99.62) (231s)
+ep  60 loss 0.0007 val 99.567 val_ema 99.570 (max 99.64) (274s)
+[BN recalc] val_ema 99.570 -> 99.570
+DONE nokd_gelu time=274s {"val_ema": [99.53999328613281, 99.55999755859375, 99.63999938964844, 99.5999984741211, 99.5199966430664, 99.55999755859375], "test_ema": null}

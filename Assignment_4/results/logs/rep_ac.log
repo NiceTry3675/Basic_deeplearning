@@ -1,0 +1,13 @@
+[KD] teachers=1 T=2.0 a=0.9 teacher-train-acc=99.582
+[model] c3_16 c3_16 M R24 M R32 G L10 params=29,098 MACs=4,716,874 ok=True K=6
+[rep] 학습 그래프 params/모델 51,274 (가지: 3x3+['k11', 'k13', 'k31', 'id']) → 학습 후 배포 res_c로 합침
+ep   1 loss 2.7682 val 94.557 val_ema 98.047 (max 98.34) (31s)
+ep  10 loss 0.0620 val 99.210 val_ema 99.483 (max 99.56) (164s)
+ep  20 loss 0.0438 val 99.307 val_ema 99.553 (max 99.62) (314s)
+ep  30 loss 0.0330 val 99.437 val_ema 99.597 (max 99.68) (461s)
+ep  40 loss 0.0224 val 99.553 val_ema 99.630 (max 99.66) (612s)
+ep  50 loss 0.0134 val 99.637 val_ema 99.627 (max 99.68) (760s)
+ep  60 loss 0.0104 val 99.633 val_ema 99.637 (max 99.70) (904s)
+[rep] 합치기 검증: max|logit diff|=9.54e-06  정확도 동일=True
+[BN recalc] val_ema 99.637 -> 99.637
+DONE rep_ac time=904s {"val_ema": [99.67999267578125, 99.69999694824219, 99.57999420166016, 99.63999938964844, 99.57999420166016, 99.63999938964844], "test_ema": null}

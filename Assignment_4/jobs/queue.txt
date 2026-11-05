@@ -110,3 +110,19 @@ fin_oof_res_c_gelu_j0 train_packed.py --model res_c --act gelu --split full --K 
 fin_oof_res_c_gelu_j1 train_packed.py --model res_c --act gelu --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 1011
 fin_oof_res_c_gelu_j2 train_packed.py --model res_c --act gelu --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 2011
 fin_oof_res_c_gelu_j3 train_packed.py --model res_c --act gelu --split full --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --test-every-epoch --ls 0 --kd ../results/teachers/t_res_full_oof5.pt --kd-alpha 0.9 --kd-T 2 --seed 3011
+# ---- 2026-11-04: 가중치 평균(soup) + KD 없는 GELU 대조군
+nokd_gelu train_packed.py --model res_c --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --act gelu
+soup_b30 train_packed.py --model res_c --split dev --K 16 --soup 4 --branch-ep 30 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+soup_b15 train_packed.py --model res_c --split dev --K 16 --soup 4 --branch-ep 15 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+soup_b45 train_packed.py --model res_c --split dev --K 16 --soup 4 --branch-ep 45 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+soup_b0 train_packed.py --model res_c --split dev --K 16 --soup 4 --branch-ep 0 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+# ---- 3차 GPT 조언: 풀링 위치 변경 / 첫 conv 5×5 (kd_gelu와 같은 설정·seed)
+kd_gelu_lp train_packed.py --model res_c_lp --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+kd_gelu_k5 train_packed.py --model res_c_k5 --split dev --K 6 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+# ---- soup 후속: b15 재현 / 분기 시점 8 / 그룹당 멤버 8개
+soup_b15_rep train_packed.py --model res_c --split dev --K 16 --soup 4 --branch-ep 15 --seed 1 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+soup_b8 train_packed.py --model res_c --split dev --K 16 --soup 4 --branch-ep 8 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+soup_b15_m8 train_packed.py --model res_c --split dev --K 24 --soup 3 --branch-ep 15 --seed 2 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+# ---- 2026-11-05 마지막 라운드 1단계 선별: attention transfer(β 0/100/1000, 각 6 seed, 동시 대조군) / 구조 재매개변수화(RepVGG+ACNet)
+at_scr train_packed.py --model res_c --split dev --K 18 --at ../results/teachers/t_res_dev_oof5_at.pt --at-beta 0,100,1000 --seed 200 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
+rep_ac train_packed.py --model res_c --split dev --K 6 --rep k11,k13,k31,id --seed 200 --opt sgd --epochs 60 --lr 0.1 --wd 5e-4 --ls 0 --kd ../results/teachers/t_res_dev_oof5.pt --kd-alpha 0.9 --kd-T 2 --act gelu
